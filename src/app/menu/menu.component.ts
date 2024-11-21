@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CarouselComponent } from '../carousel/carousel.component';
+import {MenuListComponent} from "./menu-list/menu-list.component";
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [CarouselComponent],
+  imports: [CarouselComponent, MenuListComponent],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
