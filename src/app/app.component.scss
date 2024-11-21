@@ -1,0 +1,56 @@
+.footer {
+    height: 150px;
+    background-color: #213e60;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+.contact {
+    margin-bottom: 300px;
+    padding-top: 100px;
+    height: 350px;
+}
+.events {
+    height: 400px;
+    color: black;
+}
+.team {
+    height: 400px;
+    color: black;
+}
+.menu {
+    height: 2000px;
+    color: black;
+}
+.row {
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.divider-with-text {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .divider-with-text::before,
+  .divider-with-text::after {
+    content: '';
+    flex: 1;
+    border-bottom: 2px solid black;
+    margin: 0 10px;
+  }
+  
+  .divider-with-text span {
+    color: black;
+    font-size: 42px;
+  }
+
+@media (max-width: 950px) {
+    .row {
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}

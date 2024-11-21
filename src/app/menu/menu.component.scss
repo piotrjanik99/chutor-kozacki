@@ -1,0 +1,22 @@
+.special-dishes-header {
+    font-size: 32px;
+}
+.divider-with-text {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .divider-with-text::before,
+  .divider-with-text::after {
+    content: '';
+    flex: 1;
+    border-bottom: 2px solid black;
+    margin: 0 10px;
+  }
+  
+  .divider-with-text span {
+    color: black;
+    font-size: 42px;
+  }
