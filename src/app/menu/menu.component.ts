@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CarouselComponent } from '../carousel/carousel.component';
 import {MenuListComponent} from "./menu-list/menu-list.component";
+import {DISH_DESCRIPTIONS} from "../constants/dishes.constants";
 
 @Component({
   selector: 'app-menu',
@@ -13,13 +14,11 @@ import {MenuListComponent} from "./menu-list/menu-list.component";
 export class MenuComponent implements OnInit{
   dishImage: string[] = [''];
   dishImageDescription: string[] = [''];
+  dishTitle: string[] = [''];
 
   ngOnInit(): void {
     this.dishImage = ['dish1.png', 'dish2.png', 'dish3.png', 'dish4.png'];
-    this.dishImageDescription = [
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.']
+    this.dishTitle = ['Pieczeń z daniela', 'Kozak Burger', 'Borszcz', 'Gołąbki z baraniną']
+    this.dishImageDescription = [DISH_DESCRIPTIONS.DANIEL, DISH_DESCRIPTIONS.BURGER, DISH_DESCRIPTIONS.BORSZCZ, DISH_DESCRIPTIONS.GOLABKI]
   }
 }

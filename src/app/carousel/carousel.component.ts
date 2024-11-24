@@ -14,6 +14,7 @@ export class CarouselComponent implements OnInit {
   purpose = input('')
   images = input(['']);
   imageDescription = input (['']);
+  imageTitle = input(['']);
 
   carouselId!: string;
 
