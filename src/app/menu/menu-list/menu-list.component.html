@@ -1,1 +1,11 @@
-<p>menu-list works!</p>
+<div class="menu-list mt-5">
+    <div class="menu-column">
+      @for ( item of menuItems; track item.title) {
+        <app-menu-list-item
+          [itemTitle]="item.title"
+          [itemDescription]="item.description"
+          [itemPrice]="item.price"
+        ></app-menu-list-item>
+      }
+    </div>
+</div>

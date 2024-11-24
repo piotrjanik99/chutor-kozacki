@@ -13,7 +13,7 @@ import { NgOptimizedImage } from '@angular/common';
 export class CarouselComponent implements OnInit {
   purpose = input('')
   images = input(['']);
-  imageDescription = input (['']);
+  imageDescription = input(['']);
   imageTitle = input(['']);
 
   carouselId!: string;
