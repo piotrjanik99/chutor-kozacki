@@ -1,14 +1,4 @@
 <div id="{{carouselId}}" class="carousel carousel-dark slide">
-    <div class="carousel-indicators">
-      <button *ngFor="let image of images(); let i = index"
-              type="button"
-              [attr.data-bs-target]="'#' + carouselId"
-              [attr.data-bs-slide-to]="i"
-              [class.active]="i === 0"
-              [attr.aria-current]="i === 0 ? 'true' : null"
-              [attr.aria-label]="'Slide ' + (i + 1)">
-      </button>
-    </div>
     <div class="carousel-inner">
       <div *ngFor="let image of images(); let i = index"
            class="carousel-item"
@@ -17,7 +7,9 @@
           <div class="col-5">
             <img [ngSrc]="image" class="d-block" alt="..." width="350" height="350" loading="lazy">
           </div>
-          <div class="col-7 d-flex justify-content-center align-items-center">
+          <div class="col-7 d-flex justify-content-center align-items-center flex-column">
+            <div class="row"></div>
+            <span class="fw-bold fs-5">{{imageTitle()[i]}}</span>
             <span>{{imageDescription()[i]}}</span>
           </div>
         </div>
