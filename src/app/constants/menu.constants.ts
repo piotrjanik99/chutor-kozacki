@@ -16,7 +16,7 @@ export const appetizers = [
   },
   {
     title: 'Deska myśliwego (200g)',
-    description: '( mix wędlin z dziczyzny i marynaty )',
+    description: 'mix wędlin z dziczyzny i marynaty',
     price: '40'
   }
 ];
