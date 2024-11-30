@@ -1,10 +1,10 @@
-<div class="text-center text-white">
+<div class=" text-white">
     <app-header></app-header>
     <div class="row gx-0 team" id="team">
         <div class="divider-with-text">
             <span class="menu-header">Załoga</span>
         </div>
-        <app-carousel purpose="Załoga" [images]="staffImage" [imageDescription]="staffImageDescription"></app-carousel>
+        <app-carousel purpose="Załoga" [images]="staffImage" [imageTitle]="staffTitle" [imageDescription]="staffImageDescription"></app-carousel>
     </div>
     <div class="row gx-0 menu" id="menu">
         <app-menu class="mt-5"></app-menu>
@@ -13,7 +13,7 @@
         <div class="divider-with-text">
             <span class="menu-header">Wydarzenia</span>
         </div>
-        <app-carousel purpose="Wydarzenia" [images]="eventImage" [imageDescription]="eventImageDescription"></app-carousel>
+        <app-carousel purpose="Wydarzenia" [images]="eventImage" [imageTitle]="eventTitle" [imageDescription]="eventImageDescription"></app-carousel>
     </div>
     <div class="row gx-0 contact" id="contact">
         <div class="divider-with-text">
