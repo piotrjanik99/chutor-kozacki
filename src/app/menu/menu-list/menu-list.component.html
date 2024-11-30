@@ -1,1 +1,67 @@
-<p>menu-list works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+      <h2>Przekąski zimne</h2>
+      @for ( item of appetizers; track item.title) {
+        <app-menu-list-item
+          [itemTitle]="item.title"
+          [itemDescription]="item.description"
+          [itemPrice]="item.price"
+        ></app-menu-list-item>
+      }
+      <br />
+      <h2>Przekąski gorące</h2>
+      @for ( item of hotSnacks; track item.title) {
+        <app-menu-list-item
+          [itemTitle]="item.title"
+          [itemDescription]="item.description"
+          [itemPrice]="item.price"
+        ></app-menu-list-item>
+      }
+      <h2>Zupy</h2>
+      @for ( item of soups; track item.title) {
+        <app-menu-list-item
+          [itemTitle]="item.title"
+          [itemDescription]="item.description"
+          [itemPrice]="item.price"
+        ></app-menu-list-item>
+      }
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+      <h2>Dania główne</h2>
+      @for ( item of mainCourses; track item.title) {
+        <app-menu-list-item
+          [itemTitle]="item.title"
+          [itemDescription]="item.description"
+          [itemPrice]="item.price"
+        ></app-menu-list-item>
+      }
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+      <h2>Desery</h2>
+      @for ( item of desserts; track item.title) {
+        <app-menu-list-item
+          [itemTitle]="item.title"
+          [itemDescription]="item.description"
+          [itemPrice]="item.price"
+        ></app-menu-list-item>
+      }
+      <h2>Dla Dzieci</h2>
+      @for ( item of kidsMenu; track item.title) {
+        <app-menu-list-item
+          [itemTitle]="item.title"
+          [itemDescription]="item.description"
+          [itemPrice]="item.price"
+        ></app-menu-list-item>
+      }
+      <h2>Dodatki</h2>
+      @for ( item of sides; track item.title) {
+        <app-menu-list-item
+          [itemTitle]="item.title"
+          [itemDescription]="item.description"
+          [itemPrice]="item.price"
+        ></app-menu-list-item>
+      }
+    </div>
+  </div>
+</div>

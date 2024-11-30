@@ -1,25 +1,10 @@
 .footer {
-    height: 150px;
     background-color: #213e60;
-    margin-left: 0px !important;
-    margin-right: 0px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
-.contact {
-    margin-bottom: 300px;
-    padding-top: 100px;
-    height: 350px;
-}
-.events {
-    height: 400px;
-    color: black;
-}
-.team {
-    height: 400px;
-    color: black;
-}
-.menu {
-    height: 2000px;
-    color: black;
+.contact, .events, .team, .menu {
+  color: black;
 }
 .row {
     margin-top: 50px;
@@ -33,7 +18,7 @@
     text-align: center;
     margin: 20px 0;
   }
-  
+
   .divider-with-text::before,
   .divider-with-text::after {
     content: '';
@@ -41,7 +26,7 @@
     border-bottom: 2px solid black;
     margin: 0 10px;
   }
-  
+
   .divider-with-text span {
     color: black;
     font-size: 42px;
