@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {MenuListItemComponent} from "./menu-list-item/menu-list-item.component";
+import {appetizers, desserts, hotSnacks, kidsMenu, mainCourses, sides, soups} from "../../constants/menu.constants";
 
 @Component({
   selector: 'app-menu-list',
@@ -11,49 +12,11 @@ import {MenuListItemComponent} from "./menu-list-item/menu-list-item.component";
   styleUrl: './menu-list.component.scss'
 })
 export class MenuListComponent {
-  menuItems = [
-    {
-      title: 'Spaghetti Bolognese',
-      description: 'Classic Italian pasta dish with rich tomato sauce.',
-      price: '12.99'
-    },
-    {
-      title: 'Chicken Curry',
-      description: 'Spicy and creamy curry with tender chicken pieces.',
-      price: '10.99'
-    },
-    {
-      title: 'Caesar Salad',
-      description: 'Fresh lettuce with Caesar dressing, croutons, and parmesan.',
-      price: '8.99'
-    },
-    {
-      title: 'Caesar Salad',
-      description: 'Fresh lettuce with Caesar dressing, croutons, and parmesan.',
-      price: '8.99'
-    },
-    {
-      title: 'Caesar Salad',
-      description: 'Fresh lettuce with Caesar dressing, croutons, and parmesan.',
-      price: '8.99'
-    },
-    {
-      title: 'Caesar Salad',
-      description: 'Fresh lettuce with Caesar dressing, croutons, and parmesan.',
-      price: '8.99'
-    },
-    {
-      title: 'Caesar Salad',
-      description: 'Fresh lettuce with Caesar dressing, croutons, and parmesan.',
-      price: '8.99'
-    },
-  ];
-
-  splitIntoColumns(items: any[], columns: number): any[][] {
-    const result: any[][] = Array.from({ length: columns }, () => []);
-    items.forEach((item, index) => {
-      result[index % columns].push(item);
-    });
-    return result;
-  }
+  protected readonly appetizers = appetizers;
+  protected readonly hotSnacks = hotSnacks;
+  protected readonly soups = soups;
+  protected readonly mainCourses = mainCourses;
+  protected readonly desserts = desserts;
+  protected readonly kidsMenu = kidsMenu;
+  protected readonly sides = sides;
 }
