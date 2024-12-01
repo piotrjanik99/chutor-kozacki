@@ -227,3 +227,293 @@ export const sides = [
     price: '4'
   }
 ];
+export const hotDrinks = [
+  {
+    title: 'Herbata (250ml)',
+    description: '',
+    price: '10'
+  },
+  {
+    title: 'Herbata smakowa (250ml)',
+    description: '',
+    price: '12'
+  },
+  {
+    title: 'Herbata z syropem (250ml)',
+    description: '',
+    price: '12'
+  },
+  {
+    title: 'Kawa czarna (200ml)',
+    description: '',
+    price: '10'
+  },
+  {
+    title: 'Kawa biała (250ml)',
+    description: '',
+    price: '12'
+  },
+  {
+    title: 'Kawa po kozacku (250ml)',
+    description: '',
+    price: '15'
+  },
+  {
+    title: 'Espresso/doppio (30ml/60ml)',
+    description: '',
+    price: '8/12'
+  },
+  {
+    title: 'Cappuccino (200ml)',
+    description: '',
+    price: '15'
+  },
+  {
+    title: 'Kawa mrożona (250ml)',
+    description: '',
+    price: '18'
+  },
+  {
+    title: 'Caffé latte macchiato (250ml)',
+    description: '',
+    price: '15'
+  },
+  {
+    title: 'Caffé mocha (200ml)',
+    description: '',
+    price: '15'
+  },
+  {
+    title: 'Kakao z bitą śmietaną (250ml)',
+    description: '',
+    price: '15'
+  }
+];
+export const coldDrinks = [
+  {
+    title: 'Pepsi, Pepsi Zero, Mirinda, 7Up, Schweppes (200ml)',
+    description: '',
+    price: '8'
+  },
+  {
+    title: 'Pepsi, Mirinda, 7Up (500ml)',
+    description: '',
+    price: '15'
+  },
+  {
+    title: 'Ice tea (250ml)',
+    description: '',
+    price: '8'
+  },
+  {
+    title: 'Sok owocowy (200ml)',
+    description: '',
+    price: '8'
+  },
+  {
+    title: 'Sok owocowy (1 litr)',
+    description: '',
+    price: '15'
+  },
+  {
+    title: 'Lemoniada (400ml)',
+    description: '',
+    price: '6'
+  },
+  {
+    title: 'Lemoniada dzbanek (1.2 litr)',
+    description: '',
+    price: '15'
+  },
+  {
+    title: 'Woda (250ml)',
+    description: 'gazowana, niegazowana',
+    price: ''
+  },
+  {
+    title: 'Woda dzbanek (1 litr)',
+    description: '',
+    price: '10'
+  },
+];
+export const tapBeer = [
+  {
+    title: 'Okocim beczka (0.3l)',
+    description: '',
+    price: '10'
+  },
+  {
+    title: 'Kozacki Lager beczka (0.3l)',
+    description: '',
+    price: '12'
+  },
+  {
+    title: 'Okocim beczka (0.5l)',
+    description: '',
+    price: '12'
+  },
+  {
+    title: 'Kozacki Lager beczka (0.5l)',
+    description: '',
+    price: '18'
+  },
+];
+export const bottledBeer = [
+  {
+    title: 'Łomża jasne (0,5l)',
+    description: '',
+    price: '10'
+  },
+  {
+    title: 'Łomża Radler 0% (0,5l)',
+    description: '',
+    price: '10'
+  },
+  {
+    title: 'Łomża 0% (0,5l)',
+    description: '',
+    price: '10'
+  },
+  {
+    title: 'Heineken (0,5l)',
+    description: '',
+    price: '12'
+  },
+  {
+    title: 'Duch Sanu (0,5l)',
+    description: 'regionalne piwo',
+    price: '15'
+  },
+  {
+    title: 'Góralskie (0,5l)',
+    description: 'regionalne piwo',
+    price: '15'
+  },
+  {
+    title: 'Grzaniec bieszczadzki (200ml)',
+    description: '',
+    price: '15'
+  },
+];
+export const vodkaClear = [
+  {
+    title: 'Wataha (50ml/500ml)',
+    description: '',
+    price: '10/100'
+  },
+  {
+    title: 'Bieszczadzki zakapior (50ml/500ml)',
+    description: 'żyto, pszenica, ziemniak',
+    price: '10/100'
+  },
+];
+export const vodkaCraft = [
+  {
+    title: 'Soplica (50ml/500ml)',
+    description: 'Wiśniowa, Pigwowa, Malinowa',
+    price: '10/70'
+  },
+];
+export const wermut = [
+  {
+    title: 'Martini Bianco (100ml)',
+    description: '',
+    price: '15'
+  },
+];
+export const tequila = [
+  {
+    title: 'Tequila Silver (50ml)',
+    description: '',
+    price: '15'
+  },
+];
+export const liquors = [
+  {
+    title: 'Jagermeister (50ml)',
+    description: '',
+    price: '15'
+  },
+];
+export const gin = [
+  {
+    title: 'Seagram’s (50ml)',
+    description: '',
+    price: '15'
+  },
+];
+export const rum = [
+  {
+    title: 'Malibu (50ml)',
+    description: '',
+    price: '15'
+  },
+  {
+    title: 'Havana Club (50ml)',
+    description: '',
+    price: '15'
+  },
+];
+export const brandy = [
+  {
+    title: 'Grand Yerevan 7 yo (50ml)',
+    description: '',
+    price: '16'
+  },
+];
+export const bourbon = [
+  {
+    title: 'Jack Daniels (50ml/700ml)',
+    description: '',
+    price: '15/180'
+  },
+  {
+    title: 'Jim Beam (50ml/700ml)',
+    description: '',
+    price: '15/180'
+  },
+];
+export const whisky = [
+  {
+    title: 'Ballantines (50ml/700ml)',
+    description: '',
+    price: '15/180'
+  },
+  {
+    title: 'Jameson (50ml/700ml)',
+    description: '',
+    price: '15/180'
+  },
+  {
+    title: 'Chivas 12YO (50ml/700ml)',
+    description: '',
+    price: '20/240'
+  },
+  {
+    title: 'Grant’s (50ml/700ml)',
+    description: '',
+    price: '12/150'
+  },
+];
+export const cocktails = [
+  {
+    title: 'Mohito/Double Mohito (300ml)',
+    description: 'Rum, limonka, cukier brązowy, mięta, woda gazowana',
+    price: '25/35'
+  },
+  {
+    title: 'Tequila Sunrise (300ml)',
+    description: 'Tequila, sok pomarańczowy, grenadyna',
+    price: '25'
+  },
+  {
+    title: 'Ekstravaganza (400ml)',
+    description: 'Wódka wataha, Malibu, likier blue curacao, grenadyna, sok pomarańczowy',
+    price: '25'
+  },
+  {
+    title: 'Malinowa rozkosz (300ml)',
+    description: 'Soplica malinowa, wódka wyataha, syrop malinowy, 7-up, cytryna',
+    price: '25'
+  },
+];
