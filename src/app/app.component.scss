@@ -1,5 +1,5 @@
 .footer {
-    background-color: #E68C3A;
+    background-color: #213e60;
     margin-left: 0 !important;
     margin-right: 0 !important;
     text-align: center;
@@ -36,7 +36,13 @@
 @media (max-width: 950px) {
     .row {
         margin-top: 20px;
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #events {
+      height: 1000px;
+    }
+    #team {
+      height: 1000px;
     }
 }

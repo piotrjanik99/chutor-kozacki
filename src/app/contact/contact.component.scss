@@ -1,6 +1,18 @@
 .contact-box {
-    background-color: #E68C3A;
+    background-color: #213e60;
+    color: white;
+}
+.icon-text {
+  padding-left: 10px;
+}
+.contact-row {
+  padding-top: 15px;
 }
 .row {
     height: 350px;
+}
+@media (max-width: 950px) {
+  .contact-row {
+    padding-top: 0;
+  }
 }

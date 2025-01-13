@@ -7,4 +7,21 @@
   .carousel-item {
     padding: 0;
   }
+
+  .carousel {
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #213e60;
+  }
+
+  .carousel-dark .carousel-control-next-icon, .carousel-dark .carousel-control-prev-icon {
+    filter: none !important;
+  }
+
+  .row {
+    margin-top: 20px;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 }

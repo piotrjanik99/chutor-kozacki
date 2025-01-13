@@ -328,7 +328,7 @@ export const coldDrinks = [
   {
     title: 'Woda (250ml)',
     description: 'gazowana, niegazowana',
-    price: ''
+    price: '5'
   },
   {
     title: 'Woda dzbanek (1 litr)',
