@@ -1,29 +1,8 @@
 <div class="page-background text-white">
     <app-header></app-header>
-    <div class="row gx-0 team" id="team">
-        <div class="divider-with-text">
-            <span class="menu-header">Załoga</span>
-        </div>
-        <app-carousel purpose="Załoga" [images]="staffImage" [imageTitle]="staffTitle" [imageDescription]="staffImageDescription"></app-carousel>
-    </div>
-    <div class="row gx-0 menu">
-        <app-menu class="mt-5"></app-menu>
-    </div>
-    <div class="row gx-0 events" id="events">
-        <div class="divider-with-text">
-            <span class="menu-header">Wydarzenia</span>
-        </div>
-        <app-carousel purpose="Wydarzenia" [images]="eventImage" [imageTitle]="eventTitle" [imageDescription]="eventImageDescription"></app-carousel>
-    </div>
-    <div class="row gx-0 contact" id="contact">
-        <div class="divider-with-text">
-            <span class="menu-header">Kontakt</span>
-        </div>
-        <app-contact></app-contact>
-    </div>
-    <div class="row gx-0 footer">
+  <router-outlet></router-outlet>
+    <div class="row gx-0 footer mt-5">
         <app-footer></app-footer>
         <span>Chutor Kozacki {{currentYear}}</span>
     </div>
 </div>
-<router-outlet />

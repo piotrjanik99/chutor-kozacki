@@ -1,0 +1,32 @@
+<div class="divider-with-text" #galleryTop>
+  <span class="menu-header">Galeria</span>
+</div>
+<div class="container mt-4">
+  <div class="row">
+    @for (image of images; track image; let i = $index) {
+      <div class="col-md-3 col-sm-4 col-6 mb-4">
+        <div class="card h-100">
+          <img
+            [src]="getPath(image)"
+            class="card-img-top img-fluid gallery-image"
+            [alt]="'Image ' + (i + 1)"
+            (click)="openModal(i)"
+          >
+        </div>
+      </div>
+    }
+  </div>
+</div>
+
+
+<ng-template #imageModal let-modal>
+  <div class="text-center position-relative">
+    <button type="button"
+            class="btn-close position-absolute top-0 end-0 m-3 bg-white"
+            (click)="modal.dismiss()">
+    </button>
+    <img [src]="getPath(images[currentImageIndex])" class="img-fluid modal-image">
+  </div>
+</ng-template>
+
+<router-outlet></router-outlet>

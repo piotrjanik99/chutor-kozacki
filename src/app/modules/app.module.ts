@@ -5,6 +5,7 @@ import { AppComponent } from '../app.component';
 import { CarouselComponent } from '../carousel/carousel.component';
 import { MenuComponent } from '../menu/menu.component';
 import { ContactComponent } from '../contact/contact.component';
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [],
@@ -13,6 +14,7 @@ import { ContactComponent } from '../contact/contact.component';
     HeaderComponent,
     CarouselComponent,
     MenuComponent,
+    NgbModule,
     ContactComponent,
     AppComponent
   ],
