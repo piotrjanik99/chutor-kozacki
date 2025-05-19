@@ -11,6 +11,24 @@
 .row {
     height: 350px;
 }
+.minimalist-style {
+  background-color: #fafafa;
+  border-radius: 0;
+}
+
+.minimalist-style .form-control {
+  background-color: transparent;
+  padding-left: 0;
+}
+
+.minimalist-style .form-control:focus {
+  box-shadow: none;
+  border-color: #000;
+}
+
+.letter-spacing-1 {
+  letter-spacing: 1px;
+}
 @media (max-width: 950px) {
   .contact-row {
     padding-top: 0;
