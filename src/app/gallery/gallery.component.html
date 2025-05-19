@@ -1,23 +1,88 @@
 <div class="divider-with-text" #galleryTop>
   <span class="menu-header">Galeria</span>
 </div>
+
 <div class="container mt-4">
-  <div class="row">
-    @for (image of images; track image; let i = $index) {
-      <div class="col-md-3 col-sm-4 col-6 mb-4">
-        <div class="card h-100">
-          <img
-            [src]="getPath(image)"
-            class="card-img-top img-fluid gallery-image"
-            [alt]="'Image ' + (i + 1)"
-            (click)="openModal(i)"
-          >
+  <div class="accordion" id="galleryAccordion">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDishes">
+          <h2 class="text-black">Dania</h2>
+        </button>
+      </h2>
+      <div id="collapseDishes" class="accordion-collapse collapse show" data-bs-parent="#galleryAccordion">
+        <div class="accordion-body">
+          <div class="row">
+            @for (image of dishImages; track image; let i = $index) {
+              <div class="col-md-3 col-sm-4 col-6 mb-4">
+                <div class="card h-100">
+                  <img
+                    [src]="getPath(image)"
+                    class="card-img-top img-fluid gallery-image"
+                    [alt]="'Danie ' + (i + 1)"
+                    (click)="openModal(i, 'dishes')"
+                  >
+                </div>
+              </div>
+            }
+          </div>
         </div>
       </div>
-    }
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVenue">
+          <h2 class="text-black">Obiekt</h2>
+        </button>
+      </h2>
+      <div id="collapseVenue" class="accordion-collapse collapse" data-bs-parent="#galleryAccordion">
+        <div class="accordion-body">
+          <div class="row">
+            @for (image of venueImages; track image; let i = $index) {
+              <div class="col-md-3 col-sm-4 col-6 mb-4">
+                <div class="card h-100">
+                  <img
+                    [src]="getPath(image)"
+                    class="card-img-top img-fluid gallery-image"
+                    [alt]="'Obiekt ' + (i + 1)"
+                    (click)="openModal(i, 'venue')"
+                  >
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEvents">
+          <h2 class="text-black">Imprezy okolicznościowe</h2>
+        </button>
+      </h2>
+      <div id="collapseEvents" class="accordion-collapse collapse" data-bs-parent="#galleryAccordion">
+        <div class="accordion-body">
+          <div class="row">
+            @for (image of eventImages; track image; let i = $index) {
+              <div class="col-md-3 col-sm-4 col-6 mb-4">
+                <div class="card h-100">
+                  <img
+                    [src]="getPath(image)"
+                    class="card-img-top img-fluid gallery-image"
+                    [alt]="'Impreza ' + (i + 1)"
+                    (click)="openModal(i, 'events')"
+                  >
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
 
 <ng-template #imageModal let-modal>
   <div class="text-center position-relative">
@@ -25,7 +90,7 @@
             class="btn-close position-absolute top-0 end-0 m-3 bg-white"
             (click)="modal.dismiss()">
     </button>
-    <img [src]="getPath(images[currentImageIndex])" class="img-fluid modal-image">
+    <img [src]="getPath(currentImage)" class="img-fluid modal-image">
   </div>
 </ng-template>
 

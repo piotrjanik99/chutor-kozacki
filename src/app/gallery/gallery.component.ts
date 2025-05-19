@@ -1,12 +1,14 @@
-import {AfterViewInit, Component, ElementRef, inject, TemplateRef, ViewChild} from '@angular/core';
-import {RouterOutlet} from "@angular/router";
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import { AfterViewInit, Component, ElementRef, inject, TemplateRef, ViewChild } from '@angular/core';
+import { RouterOutlet } from "@angular/router";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-gallery',
   standalone: true,
   imports: [
     RouterOutlet,
+    NgbAccordionModule
   ],
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.scss'
@@ -14,12 +16,14 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 export class GalleryComponent implements AfterViewInit {
   @ViewChild('galleryTop') galleryTop!: ElementRef;
   @ViewChild('imageModal') imageModal!: TemplateRef<any>;
-  currentImageIndex = 0;
   modalService = inject(NgbModal);
 
-  images = [
-    'dish1.png', 'dish2.png', 'dish3.png', 'dish4.png', 'event1.png', 'event2.png', 'event3.png', 'staff1.png', 'staff2.png', 'staff3.png', 'bg.jpg', 'bg2.jpg'
-  ];
+  dishImages = ['dish1.png', 'dish2.png', 'dish3.png', 'dish4.png'];
+  venueImages = ['staff1.png', 'staff2.png', 'staff3.png', 'bg.jpg', 'bg2.jpg'];
+  eventImages = ['event1.png', 'event2.png', 'event3.png'];
+
+  currentImage = '';
+  currentCategory = '';
 
   ngAfterViewInit() {
     setTimeout(() => {
@@ -34,8 +38,21 @@ export class GalleryComponent implements AfterViewInit {
     return `/${image}`;
   }
 
-  openModal(index: number) {
-    this.currentImageIndex = index;
+  openModal(index: number, category: 'dishes' | 'venue' | 'events') {
+    this.currentCategory = category;
+
+    switch (category) {
+      case 'dishes':
+        this.currentImage = this.dishImages[index];
+        break;
+      case 'venue':
+        this.currentImage = this.venueImages[index];
+        break;
+      case 'events':
+        this.currentImage = this.eventImages[index];
+        break;
+    }
+
     this.modalService.open(this.imageModal, {
       animation: false,
       size: 'lg',
