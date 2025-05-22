@@ -3,83 +3,98 @@
 </div>
 
 <div class="container mt-4">
-  <div class="accordion" id="galleryAccordion">
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDishes">
-          <h2 class="text-black">Dania</h2>
-        </button>
-      </h2>
-      <div id="collapseDishes" class="accordion-collapse collapse show" data-bs-parent="#galleryAccordion">
-        <div class="accordion-body">
-          <div class="row">
-            @for (image of dishImages; track image; let i = $index) {
-              <div class="col-md-3 col-sm-4 col-6 mb-4">
-                <div class="card h-100">
-                  <img
-                    [src]="getPath(image)"
-                    class="card-img-top img-fluid gallery-image"
-                    [alt]="'Danie ' + (i + 1)"
-                    (click)="openModal(i, 'dishes')"
-                  >
-                </div>
+  <ul class="nav nav-tabs border-0" id="galleryTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="dishes-tab" data-bs-toggle="tab" data-bs-target="#dishes" type="button" role="tab">
+        <h2 class="text-black">Dania</h2>
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="venue-tab" data-bs-toggle="tab" data-bs-target="#venue" type="button" role="tab">
+        <h2 class="text-black">Obiekt</h2>
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="events-tab" data-bs-toggle="tab" data-bs-target="#events" type="button" role="tab">
+        <h2 class="text-black">Imprezy okolicznościowe</h2>
+      </button>
+    </li>
+  </ul>
+
+  <div class="tab-content p-3" id="galleryTabsContent">
+    <div class="tab-pane fade show active" id="dishes" role="tabpanel" aria-labelledby="dishes-tab">
+      @defer (on viewport; when accordionExpanded.dishes) {
+        <div class="row">
+          @for (image of dishImages; track image; let i = $index) {
+            <div class="col-md-3 col-sm-4 col-6 mb-4">
+              <div class="card h-100">
+                <img
+                  [src]="getPath(image)"
+                  class="card-img-top img-fluid gallery-image"
+                  [alt]="'Danie ' + (i + 1)"
+                  (click)="openModal(i, 'dishes')"
+                >
               </div>
-            }
+            </div>
+          }
+        </div>
+      } @placeholder {
+        <div class="text-center py-4">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
           </div>
         </div>
-      </div>
+      }
     </div>
 
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVenue">
-          <h2 class="text-black">Obiekt</h2>
-        </button>
-      </h2>
-      <div id="collapseVenue" class="accordion-collapse collapse" data-bs-parent="#galleryAccordion">
-        <div class="accordion-body">
-          <div class="row">
-            @for (image of venueImages; track image; let i = $index) {
-              <div class="col-md-3 col-sm-4 col-6 mb-4">
-                <div class="card h-100">
-                  <img
-                    [src]="getPath(image)"
-                    class="card-img-top img-fluid gallery-image"
-                    [alt]="'Obiekt ' + (i + 1)"
-                    (click)="openModal(i, 'venue')"
-                  >
-                </div>
+    <div class="tab-pane fade" id="venue" role="tabpanel" aria-labelledby="venue-tab">
+      @defer (on viewport; when accordionExpanded.venue) {
+        <div class="row">
+          @for (image of venueImages; track image; let i = $index) {
+            <div class="col-md-3 col-sm-4 col-6 mb-4">
+              <div class="card h-100">
+                <img
+                  [src]="getPath(image)"
+                  class="card-img-top img-fluid gallery-image"
+                  [alt]="'Obiekt ' + (i + 1)"
+                  (click)="openModal(i, 'venue')"
+                >
               </div>
-            }
+            </div>
+          }
+        </div>
+      } @placeholder {
+        <div class="text-center py-4">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
           </div>
         </div>
-      </div>
+      }
     </div>
 
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEvents">
-          <h2 class="text-black">Imprezy okolicznościowe</h2>
-        </button>
-      </h2>
-      <div id="collapseEvents" class="accordion-collapse collapse" data-bs-parent="#galleryAccordion">
-        <div class="accordion-body">
-          <div class="row">
-            @for (image of eventImages; track image; let i = $index) {
-              <div class="col-md-3 col-sm-4 col-6 mb-4">
-                <div class="card h-100">
-                  <img
-                    [src]="getPath(image)"
-                    class="card-img-top img-fluid gallery-image"
-                    [alt]="'Impreza ' + (i + 1)"
-                    (click)="openModal(i, 'events')"
-                  >
-                </div>
+    <div class="tab-pane fade" id="events" role="tabpanel" aria-labelledby="events-tab">
+      @defer (on viewport; when accordionExpanded.events) {
+        <div class="row">
+          @for (image of eventImages; track image; let i = $index) {
+            <div class="col-md-3 col-sm-4 col-6 mb-4">
+              <div class="card h-100">
+                <img
+                  [src]="getPath(image)"
+                  class="card-img-top img-fluid gallery-image"
+                  [alt]="'Impreza ' + (i + 1)"
+                  (click)="openModal(i, 'events')"
+                >
               </div>
-            }
+            </div>
+          }
+        </div>
+      } @placeholder {
+        <div class="text-center py-4">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
           </div>
         </div>
-      </div>
+      }
     </div>
   </div>
 </div>
