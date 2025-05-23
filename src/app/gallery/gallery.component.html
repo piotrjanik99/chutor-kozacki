@@ -5,25 +5,28 @@
 <div class="container mt-4">
   <ul class="nav nav-tabs border-0" id="galleryTabs" role="tablist">
     <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="dishes-tab" data-bs-toggle="tab" data-bs-target="#dishes" type="button" role="tab">
-        <h2 class="text-black">Dania</h2>
+      <button class="nav-link active" id="dishes-tab" data-bs-toggle="tab" data-bs-target="#dishes"
+              type="button" role="tab" (click)="activeTab = 'dishes'">
+        <h3 class="text-black">Dania</h3>
       </button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="venue-tab" data-bs-toggle="tab" data-bs-target="#venue" type="button" role="tab">
-        <h2 class="text-black">Obiekt</h2>
+      <button class="nav-link" id="venue-tab" data-bs-toggle="tab" data-bs-target="#venue"
+              type="button" role="tab" (click)="activeTab = 'venue'">
+        <h3 class="text-black">Obiekt</h3>
       </button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="events-tab" data-bs-toggle="tab" data-bs-target="#events" type="button" role="tab">
-        <h2 class="text-black">Imprezy okolicznościowe</h2>
+      <button class="nav-link" id="events-tab" data-bs-toggle="tab" data-bs-target="#events"
+              type="button" role="tab" (click)="activeTab = 'events'">
+        <h3 class="text-black">Imprezy okolicznościowe</h3>
       </button>
     </li>
   </ul>
 
   <div class="tab-content p-3" id="galleryTabsContent">
     <div class="tab-pane fade show active" id="dishes" role="tabpanel" aria-labelledby="dishes-tab">
-      @defer (on viewport; when accordionExpanded.dishes) {
+      @defer (on viewport; when activeTab === 'dishes') {
         <div class="row">
           @for (image of dishImages; track image; let i = $index) {
             <div class="col-md-3 col-sm-4 col-6 mb-4">
@@ -48,7 +51,7 @@
     </div>
 
     <div class="tab-pane fade" id="venue" role="tabpanel" aria-labelledby="venue-tab">
-      @defer (on viewport; when accordionExpanded.venue) {
+      @defer (on viewport; when activeTab === 'venue') {
         <div class="row">
           @for (image of venueImages; track image; let i = $index) {
             <div class="col-md-3 col-sm-4 col-6 mb-4">
@@ -73,7 +76,7 @@
     </div>
 
     <div class="tab-pane fade" id="events" role="tabpanel" aria-labelledby="events-tab">
-      @defer (on viewport; when accordionExpanded.events) {
+      @defer (on viewport; when activeTab === 'events') {
         <div class="row">
           @for (image of eventImages; track image; let i = $index) {
             <div class="col-md-3 col-sm-4 col-6 mb-4">

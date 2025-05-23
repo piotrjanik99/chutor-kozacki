@@ -1,14 +1,12 @@
 import { AfterViewInit, Component, ElementRef, inject, TemplateRef, ViewChild } from '@angular/core';
 import { RouterOutlet } from "@angular/router";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-gallery',
   standalone: true,
   imports: [
     RouterOutlet,
-    NgbAccordionModule
   ],
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.scss'
@@ -89,6 +87,7 @@ export class GalleryComponent implements AfterViewInit {
 
   currentImage = '';
   currentCategory = '';
+  activeTab: string = 'dishes';
 
   ngAfterViewInit() {
     setTimeout(() => {
@@ -97,16 +96,6 @@ export class GalleryComponent implements AfterViewInit {
         block: 'start'
       });
     }, 100);
-  }
-
-  accordionExpanded = {
-    dishes: true, // starts expanded
-    venue: false,
-    events: false
-  };
-
-  onAccordionToggle(section: 'dishes' | 'venue' | 'events') {
-    this.accordionExpanded[section] = !this.accordionExpanded[section];
   }
 
   getPath(image: string): string {

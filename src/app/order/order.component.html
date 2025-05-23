@@ -1,0 +1,42 @@
+<div class="divider-with-text" #orderTop>
+  <span class="menu-header">Zorganizujemy twoje przyjęcie <br> <h5>Wypełnij proszę poniższy formularz</h5></span>
+</div>
+
+<form [formGroup]="quoteForm" (ngSubmit)="submitQuote()" novalidate class="minimalist-style">
+  <div class="mb-3">
+    <label for="quoteEmail" class="form-label small text-muted">E-mail</label>
+    <input type="text" id="quoteEmail" formControlName="email" class="form-control border-0 border-bottom rounded-0 px-0">
+  </div>
+
+  <div class="mb-3">
+    <label for="eventType" class="form-label small text-muted">Typ przyjęcia</label>
+    <select id="eventType" formControlName="eventType" class="form-control border-0 border-bottom rounded-0 px-0" (change)="onEventTypeChange()">
+      <option value="Wesele">Wesele</option>
+      <option value="Chrzciny/Komunia">Chrzciny/Komunia</option>
+      <option value="Urodziny">Urodziny</option>
+      <option value="Catering">Catering</option>
+      <option value="Inna impreza">Inne przyjęcie</option>
+    </select>
+  </div>
+
+  @if (showOtherEventInput) {
+    <div class="mb-3">
+      <label for="otherEventType" class="form-label small text-muted">Rodzaj przyjęcia</label>
+      <input type="text" id="otherEventType" formControlName="otherEventType" class="form-control border-0 border-bottom rounded-0 px-0">
+    </div>
+  }
+
+  <div class="mb-3">
+    <label for="guestCount" class="form-label small text-muted">Ilość gości</label>
+    <input type="number" id="guestCount" formControlName="guestCount" class="form-control border-0 border-bottom rounded-0 px-0" min="1">
+  </div>
+
+  <div class="mb-4">
+    <label for="eventDescription" class="form-label small text-muted">Opis wydarzenia</label>
+    <textarea id="eventDescription" formControlName="eventDescription" rows="3" class="form-control border-0 border-bottom rounded-0 px-0"></textarea>
+  </div>
+
+  <div class="d-grid gap-2">
+    <button type="submit" class="btn btn-dark rounded-pill py-2 text-uppercase fs-6 letter-spacing-1" [disabled]="quoteForm.invalid">Wyślij do wyceny</button>
+  </div>
+</form>
