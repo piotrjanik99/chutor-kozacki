@@ -1,5 +1,6 @@
 import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {init, send} from "@emailjs/browser";
 
 @Component({
   selector: 'app-order',
@@ -51,14 +52,18 @@ export class OrderComponent implements AfterViewInit{
         guestCount: this.quoteForm.get('guestCount')?.value,
         eventDescription: this.quoteForm.get('eventDescription')?.value
       };
-
-      console.log('Form data to be sent:', formData);
-      // {
-      //   email: string,
-      //   eventType: string
-      //   guestCount: number,
-      //   eventDescription: string
-      // }
+      init({
+        publicKey: "TwJqMzsBv7FlasCQd",
+      });
+      send('service_w5jmezu', 'template_7hc583d', {
+        email: formData.email,
+        eventType: formData.eventType,
+        guestCount: formData.guestCount,
+        eventDescription: formData.eventDescription,
+      }).then(() => {
+        this.quoteForm.reset()
+        alert("Dziękujemy za wiadomość")
+      })
     }
   }
 }

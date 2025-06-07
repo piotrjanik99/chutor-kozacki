@@ -43,7 +43,7 @@ export class ContactComponent {
     init({
       publicKey: "TwJqMzsBv7FlasCQd",
     });
-    send('service_j1kfk0l', 'template_7hc583d', {
+    send('service_w5jmezu', 'template_7hc583d', {
       name: this.contactForm.value.name,
       email: this.contactForm.value.email,
       subject: this.contactForm.value.subject,
