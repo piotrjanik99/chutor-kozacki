@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
     this.staffImage = ['gallery/staff1.jpeg', 'gallery/staff2.jpeg']
     this.staffTitle = ['Szef kuchni', 'Obsługa']
     this.staffImageDescription = [
-      'Szef kuchni wraz z żoną, manager kelnerów oraz kucharze odpowiedzialni za przygotowanie dań. Szef kuchni wraz z żoną, manager kelnerów oraz kucharze odpowiedzialni za przygotowanie dań. Szef kuchni wraz z żoną, manager kelnerów oraz kucharze odpowiedzialni za przygotowanie dań. Szef kuchni wraz z żoną, manager kelnerów oraz kucharze odpowiedzialni za przygotowanie dań.',
+      'Szef kuchni wraz z żoną, manager kelnerów oraz kucharze odpowiedzialni za przygotowanie dań.',
       'Obsługa odpowiedzialna za jak najlepsze doświadczenia podczas pobytu.']
     this.eventImage = ['gallery/event28main.jpg', 'gallery/event1main.jpeg', 'gallery/event33main.jpg']
     this.eventTitle = ['Wesela', 'Komunie', 'Imprezy okolicznościowe']
