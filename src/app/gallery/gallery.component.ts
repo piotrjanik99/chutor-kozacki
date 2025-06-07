@@ -31,6 +31,12 @@ export class GalleryComponent implements AfterViewInit {
     'gallery/dish9.jpg',
     'gallery/dish10.jpg'];
   venueImages = [
+    'gallery/venue16.jpg',
+    'gallery/venue17.jpg',
+    'gallery/venue18.jpg',
+    'gallery/venue19.jpg',
+    'gallery/venue20.jpg',
+    'gallery/venue21.jpg',
     'gallery/venue3.jpeg',
     'gallery/venue5.jpg',
     'gallery/venue6.jpg',
@@ -43,13 +49,18 @@ export class GalleryComponent implements AfterViewInit {
     'gallery/venue13.jpg',
     'gallery/venue14.jpg',
     'gallery/venue15.jpg',
-    'gallery/venue16.jpg',
-    'gallery/venue17.jpg',
-    'gallery/venue18.jpg',
-    'gallery/venue19.jpg',
-    'gallery/venue20.jpg',
-    'gallery/venue21.jpg',];
+  ];
   eventImages = [
+    'gallery/event34.jpg',
+    'gallery/event35.jpg',
+    'gallery/event36.jpg',
+    'gallery/event37.jpg',
+    'gallery/event38.jpg',
+    'gallery/event39.jpg',
+    'gallery/event40.jpg',
+    'gallery/event41.jpg',
+    'gallery/event42.jpg',
+    'gallery/event43.jpg',
     'gallery/event1.jpeg',
     'gallery/event2.jpeg',
     'gallery/event3.jpeg',
