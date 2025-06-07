@@ -36,6 +36,56 @@ nav {
     top: 0;
     width: 100%;
 }
+.navbar-toggler {
+  border: none;
+  padding: 0.5rem;
+  box-shadow: none !important;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+.navbar-toggler-icon {
+  background-image: none;
+  position: relative;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+.navbar-toggler-icon::before {
+  transform: translateY(-10px);
+}
+
+.navbar-toggler-icon::after {
+  transform: translateY(10px);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background-color: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+  transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+  transform: rotate(-45deg);
+}
 .navbar-dark {
     color: white !important;
 }
@@ -70,12 +120,17 @@ nav {
 }
 @media (max-width: 950px) {
     .navbar {
-        background-color: #213e60;
-        margin-top: 0 !important;
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      margin-top: 0 !important;
     }
-    .navbar-brand img {
+  .navbar-brand img {
         background-color: white;
         border-radius: 50%;
         padding: 6px;
-    }
+  }
+  .navbar-toggler {
+    z-index: 1001;
+  }
 }
