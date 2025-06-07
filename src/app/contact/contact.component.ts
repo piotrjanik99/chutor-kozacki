@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, inject, TemplateRef, ViewChild} from '@angular/core';
-import {NgbModal, NgbToast} from "@ng-bootstrap/ng-bootstrap";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {FormBuilder, ReactiveFormsModule, Validators} from "@angular/forms";
 import {init, send} from "@emailjs/browser";
 
@@ -8,7 +8,6 @@ import {init, send} from "@emailjs/browser";
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    NgbToast
   ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
@@ -18,7 +17,6 @@ export class ContactComponent {
   mail: string = 'sliwjac@gmail.com'
   modalService = inject(NgbModal);
   fb = inject(FormBuilder);
-  showToast = false;
   @ViewChild('contactModal') contactModal!: TemplateRef<any>;
 
   contactForm = this.fb.group({

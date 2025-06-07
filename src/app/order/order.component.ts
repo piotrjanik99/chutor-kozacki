@@ -53,11 +53,9 @@ export class OrderComponent implements AfterViewInit{
       };
 
       console.log('Form data to be sent:', formData);
-      // Here you can handle the form submission (e.g., send to service)
-      // The data is structured as:
       // {
       //   email: string,
-      //   eventType: string (either the selected option or custom text),
+      //   eventType: string
       //   guestCount: number,
       //   eventDescription: string
       // }
