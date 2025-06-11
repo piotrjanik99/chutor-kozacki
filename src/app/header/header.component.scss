@@ -29,9 +29,14 @@
     max-height: 200px;
 }
 nav {
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
+    margin-top: 0 !important;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 99999999999999;
 }
 .navbar-toggler {
   border: none;
@@ -116,12 +121,6 @@ nav {
     filter: drop-shadow(0.5px 0.5px 0.5px rgba(155, 155, 155, 1));
 }
 @media (max-width: 950px) {
-    .navbar {
-      background-color: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      margin-top: 0 !important;
-    }
   .navbar-toggler {
     z-index: 1001;
   }
