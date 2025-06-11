@@ -17,8 +17,8 @@ export class MenuComponent implements OnInit{
   dishTitle: string[] = [''];
 
   ngOnInit(): void {
-    this.dishImage = ['dish1.png', 'dish2.png', 'dish3.png', 'dish4.png'];
-    this.dishTitle = ['Pieczeń z daniela', 'Kozak Burger', 'Borszcz', 'Gołąbki z baraniną']
-    this.dishImageDescription = [DISH_DESCRIPTIONS.DANIEL, DISH_DESCRIPTIONS.BURGER, DISH_DESCRIPTIONS.BORSZCZ, DISH_DESCRIPTIONS.GOLABKI]
+    this.dishImage = ['dish3.png', 'dish2.png', 'dish1.png', 'dish4.png'];
+    this.dishTitle = ['Borszcz', 'Kozak Burger', 'Pieczeń z daniela', 'Gołąbki z baraniną']
+    this.dishImageDescription = [DISH_DESCRIPTIONS.BORSZCZ, DISH_DESCRIPTIONS.BURGER, DISH_DESCRIPTIONS.DANIEL, DISH_DESCRIPTIONS.GOLABKI]
   }
 }
