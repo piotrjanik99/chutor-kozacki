@@ -19,6 +19,9 @@ export class CarouselComponent implements OnInit {
   carouselId!: string;
 
   ngOnInit(): void {
+    this.imageTitle().map((imageTitle) => {
+      imageTitle === 'Szef kuchni' ? console.log('yes') : console.log('no');
+    })
     this.carouselId = 'carousel-' + Math.random().toString(36).substr(2, 9);
   }
 }

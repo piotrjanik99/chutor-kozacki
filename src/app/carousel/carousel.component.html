@@ -5,7 +5,7 @@
          [class.active]="i === 0">
       <div class="row">
         <div class="col-12 col-md-5 text-center">
-          <img [ngSrc]="image" class="d-block mx-auto" alt="..." width="400" height="400" loading="lazy">
+          <img [ngSrc]="image" class="d-block mx-auto" [ngClass]="{'szef': image === 'gallery/szef.jpg'}" alt="..." width="400" height="400" loading="lazy">
         </div>
         <div class="col-12 col-md-7 d-flex flex-column align-items-center mt-3 mt-md-0 justify-content-center">
           <span class="fw-bold fs-5">{{imageTitle()[i]}}</span>
