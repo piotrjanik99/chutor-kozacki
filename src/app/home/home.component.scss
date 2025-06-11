@@ -26,6 +26,12 @@
   color: black;
   font-size: 42px;
 }
+.footer {
+  background-color: black;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: center;
+}
 
 @media (max-width: 950px) {
   .row {
@@ -34,12 +40,16 @@
     margin-right: 0;
   }
   #events {
-    height: 1000px;
+    height: 100%;
   }
   #team {
-    height: 1000px;
+    height: 100%;
   }
   #contact {
-    height: 1000px;
+    height: 100%;
+    margin-bottom: 490px
+  }
+  .footer {
+    height: 100%;
   }
 }

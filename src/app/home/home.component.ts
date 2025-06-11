@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {CarouselComponent} from "../carousel/carousel.component";
 import {ContactComponent} from "../contact/contact.component";
 import {MenuComponent} from "../menu/menu.component";
+import {FooterComponent} from "../footer/footer.component";
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,8 @@ import {MenuComponent} from "../menu/menu.component";
     imports: [
         CarouselComponent,
         ContactComponent,
-        MenuComponent
+        MenuComponent,
+        FooterComponent
     ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -29,9 +31,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.currentYear = new Date().getFullYear();
-    this.staffImage = ['gallery/staff1.jpeg', 'gallery/staff2.jpeg']
-    this.staffTitle = ['Szef kuchni', 'Obsługa']
+    this.staffImage = ['gallery/szef.jpg','gallery/staff1.jpeg', 'gallery/staff2.jpeg']
+    this.staffTitle = ['Szef kuchni','Ekipa zarządzająca', 'Obsługa']
     this.staffImageDescription = [
+      'Szef kuchni podczas pokazu kulinarnego na jednym z naszych wydarzeń.',
       'Szef kuchni wraz z żoną, manager kelnerów oraz kucharze odpowiedzialni za przygotowanie dań.',
       'Obsługa odpowiedzialna za jak najlepsze doświadczenia podczas pobytu.']
     this.eventImage = ['gallery/event28main.jpg', 'gallery/event1main.jpeg', 'gallery/event33main.jpg']

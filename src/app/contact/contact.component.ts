@@ -14,7 +14,7 @@ import {init, send} from "@emailjs/browser";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContactComponent {
-  mail: string = 'sliwjac@gmail.com'
+  mail: string = 'kontakt@chutor-kozacki-restauracja.pl'
   modalService = inject(NgbModal);
   fb = inject(FormBuilder);
   @ViewChild('contactModal') contactModal!: TemplateRef<any>;

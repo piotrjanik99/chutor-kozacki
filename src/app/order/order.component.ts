@@ -1,12 +1,14 @@
 import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {init, send} from "@emailjs/browser";
+import {FooterComponent} from "../footer/footer.component";
 
 @Component({
   selector: 'app-order',
   standalone: true,
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FooterComponent
   ],
   templateUrl: './order.component.html',
   styleUrl: './order.component.scss'
@@ -55,7 +57,7 @@ export class OrderComponent implements AfterViewInit{
       init({
         publicKey: "TwJqMzsBv7FlasCQd",
       });
-      send('service_w5jmezu', 'template_7hc583d', {
+      send('service_w5jmezu', 'template_mim7miq', {
         email: formData.email,
         eventType: formData.eventType,
         guestCount: formData.guestCount,

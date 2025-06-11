@@ -24,9 +24,6 @@
     align-items: center;
     text-align: center;
 }
-.logo-container img{
-    filter: drop-shadow(0.5px 0.5px 0.5px rgba(255, 255, 255, 1));
-}
 .logo {
     max-width: 200px;
     max-height: 200px;
@@ -113,10 +110,10 @@ nav {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 .nav-item svg {
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 1));
 }
 .navbar-brand img {
-    filter: drop-shadow(0.5px 0.5px 0.5px rgba(255, 255, 255, 1));
+    filter: drop-shadow(0.5px 0.5px 0.5px rgba(155, 155, 155, 1));
 }
 @media (max-width: 950px) {
     .navbar {
@@ -125,12 +122,11 @@ nav {
       -webkit-backdrop-filter: blur(12px);
       margin-top: 0 !important;
     }
-  .navbar-brand img {
-        background-color: white;
-        border-radius: 50%;
-        padding: 6px;
-  }
   .navbar-toggler {
     z-index: 1001;
+  }
+  .logo-container img{
+    width: 200px;
+    height: 200px;
   }
 }

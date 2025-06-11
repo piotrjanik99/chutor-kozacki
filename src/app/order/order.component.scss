@@ -84,6 +84,12 @@ form {
 .mb-3, .mb-4 {
   margin-bottom: 1.5rem !important;
 }
+.footer {
+  background-color: black;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: center;
+}
 @media (max-width: 950px) {
   form {
     padding-left: 10px;
