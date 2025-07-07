@@ -33,10 +33,15 @@ nav {
     top: 0;
     width: 100%;
     margin-top: 0 !important;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(43, 32, 23, 0.6);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    z-index: 99999999999999;
+    z-index: 998;
+}
+.slogan{
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 1);
+  font-size: 20px;
+  font-weight: bolder;
 }
 .navbar-toggler {
   border: none;
@@ -118,7 +123,7 @@ nav {
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 1));
 }
 .navbar-brand img {
-    filter: drop-shadow(0.5px 0.5px 0.5px rgba(155, 155, 155, 1));
+    filter: drop-shadow(1px 1px 10px rgba(155, 155, 155, 1));
 }
 @media (max-width: 950px) {
   .navbar-toggler {

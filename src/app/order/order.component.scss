@@ -66,6 +66,11 @@ form {
   letter-spacing: 1px;
 }
 
+.btn {
+  background: #cc7700;
+  background: linear-gradient(90deg,rgba(204, 119, 0, 1) 0%, rgba(255, 168, 69, 1) 100%);
+}
+
 .btn-dark {
   background-color: #000;
   border: none;
@@ -85,7 +90,8 @@ form {
   margin-bottom: 1.5rem !important;
 }
 .footer {
-  background-color: black;
+  background: #2B2017;
+  background: linear-gradient(90deg, rgba(43, 32, 23, 1) 0%, rgba(71, 57, 34, 1) 100%);
   margin-left: 0 !important;
   margin-right: 0 !important;
   text-align: center;

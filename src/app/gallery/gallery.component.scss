@@ -5,6 +5,9 @@
   cursor: pointer;
   transition: transform 0.3s;
 }
+#imageModal {
+  z-index: 999;
+}
 .gallery-image:hover {
   transform: scale(1.03);
 }
@@ -62,7 +65,8 @@
 }
 
 .footer {
-  background-color: black;
+  background: #2B2017;
+  background: linear-gradient(90deg, rgba(43, 32, 23, 1) 0%, rgba(71, 57, 34, 1) 100%);
   margin-left: 0 !important;
   margin-right: 0 !important;
   text-align: center;
