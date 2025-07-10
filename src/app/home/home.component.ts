@@ -34,9 +34,9 @@ export class HomeComponent implements OnInit {
     this.staffImage = ['gallery/szef.jpg']
     this.staffTitle = ['Szef kuchni']
     this.staffImageDescription = [
-      'Szef kuchni Jacek Śliwiński posiada kilkunastoletnie doświadczenie kulinarne. W swojej kuchni inspiruje się smakami kresów wschodnich, przez co dania przez niego przygotowane są unikalne i nietuzinkowe. \n' +
-      'Zaczynał swoją przygodę jako kucharz w Grand Hotel Lublin, gdzie przez blisko 10 lat przygotowywał potrawy dla gości. Następnie przeniósł się w Bieszczady do karczmy Brzeziniak gdzie pełnił już funkcję szefa kuchni. \n' +
-      'Posiadając większe już doświadczenie jako szef kuchni zdecydował się rozpocząć przygodę na swoim, czyli należącej do Hotelu Chutor Kozacki restauracji.',]
+      'Szef kuchni Jacek Śliwiński posiada ponad 25 letnie doświadczenie kulinarne. W swojej kuchni inspiruje się smakami kresów wschodnich, oraz smakami swojego dzieciństwa w Bieszczadach, przez co dania przez niego przygotowane są unikalne i nietuzinkowe. \n' +
+      'Zaczynał swoją przygodę jako kucharz w Grand Hotel Lublinianka, gdzie przez blisko 10 lat przygotowywał potrawy dla gości. Prowadził szereg różnych kuchni jako szef, w różnych lokalizacjach organizując przy tym zarówno małe jak i duże imprezy kulinarne, liczące nawet do 800 osób. \n' +
+      'Obecnie zajmuje się prowadzeniem swojej restauracji w hotelu Chutor Kozacki.',]
     this.eventImage = ['gallery/event28main.jpg', 'gallery/event1main.jpeg', 'gallery/event33main.jpg']
     this.eventTitle = ['Wesela', 'Komunie', 'Imprezy okolicznościowe']
     this.eventImageDescription = [
