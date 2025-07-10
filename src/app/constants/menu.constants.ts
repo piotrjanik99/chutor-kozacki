@@ -2,22 +2,22 @@ export const appetizers = [
   {
     title: 'Carpaccio z polędwicy daniela (180g)',
     description: 'Karmelizowany burak, bryndza, cebulka marynowana, grzybki marynowane, oliwa z czosnkiem niedźwiedzim, kiełki',
-    price: '60'
+    price: '75'
   },
   {
     title: 'Sałatka kozacka (200g)',
     description: 'Mix sałat, pomidor, ogórek, ser bundz, orzech laskowy, polędwiczka wieprzowa, sos winegret',
-    price: '35'
+    price: '38'
   },
   {
-    title: 'Deska serów z żurawiną (170g)',
-    description: '',
-    price: '32'
+    title: 'Deska serów karpackich (170g)',
+    description: 'z czarnuszką, kozieradką, czosnkiem niedźwiedzim',
+    price: '38'
   },
   {
     title: 'Deska myśliwego (200g)',
     description: 'mix wędlin z dziczyzny i marynaty',
-    price: '40'
+    price: '54'
   }
 ];
 export const hotSnacks = [
@@ -39,19 +39,19 @@ export const hotSnacks = [
   {
     title: 'Fuczki (250g)',
     description: 'Placki ziemniaczane z kapustą kiszoną i wędzonym pstrągiem',
-    price: '35'
+    price: '38'
   },
   {
     title: 'Knysze (450g)',
     description: 'Smażone “pierogi” z bryndza, sos borowikowy , kiszonki',
-    price: '35'
+    price: '38'
   }
 ];
 export const soups = [
   {
     title: 'Cebulowa (250ml)',
     description: 'z tartym serem wędzonym, grzanki w chlebku',
-    price: '20'
+    price: '23'
   },
   {
     title: 'Rosół (250ml)',
@@ -61,44 +61,44 @@ export const soups = [
   {
     title: 'Żurek huculski (250ml)',
     description: 'z kiełbasą, grzybami i puree ziemniaczanym ze skwarkami',
-    price: '22'
+    price: '25'
   },
   {
     title: 'Borszcz (250ml)',
     description: 'z dodatkami: sało, cebula, chleb razowy',
-    price: '25'
+    price: '28'
   },
   {
     title: 'Hrybna juszka (250ml)',
     description: 'grzyby, kasza gryczana, ziemniak, marchewka',
-    price: '25'
+    price: '28'
   }
 ];
 export const mainCourses = [
   {
     title: 'Pstrąg smażony (450g)',
     description: 'wiejskie frytki, kapusta węgierska',
-    price: '52'
+    price: '55'
   },
   {
     title: 'Filet z pstrąga (350g)',
     description: 'por palony, sos cytrynowy, kasza z grzybami, kiełki',
-    price: '58'
+    price: '62'
   },
   {
-    title: 'Polędwiczka wieprzowa sous-vide (350g)',
+    title: 'Polędwiczka wieprzowa (350g)',
     description: 'gnocchi, sos z borowików, buraczki',
-    price: '52'
+    price: '38'
   },
   {
     title: 'Filet z kurczaka (400 g)',
     description: 'marynowany w ziołach i czosnku, rosti ziemniaczane, sos żurawinowy , bukiet sałat',
-    price: '45'
+    price: '54'
   },
   {
     title: 'Udko z Gęsi confit (700g)',
     description: 'gołąbki z modrą kapustą, kluski śląskie, sos borówkowy ,rozmaryn',
-    price: '95'
+    price: '108'
   },
   {
     title: 'CK schabowy po wiedeńsku (420g)',
@@ -113,12 +113,12 @@ export const mainCourses = [
   {
     title: 'Pieczeń z daniela (450g)',
     description: 'szaszłyk warzywny, frytki z batatów, czosnek pieczony, sos myśliwski',
-    price: '90'
+    price: '98'
   },
   {
     title: 'Ragout z Jelenia (350g)',
     description: 'grubo krojone mięso i warzywa ( cukinia, bakłażan, marchew, cebula, śliwka ) w sosie na czerwonym winie z knedlem bułczanym i pomidorkami kiszonymi',
-    price: '69'
+    price: '75'
   },
   {
     title: 'Boczek z dzika (350g)',
@@ -133,17 +133,17 @@ export const mainCourses = [
   {
     title: 'Rumsztyk jagnięcy (450g)',
     description: 'z cebulką, ziemniak pieczony z serem, pelustka',
-    price: '65'
+    price: '75'
   },
   {
-    title: 'Zestaw dnia (20 ml + 350g)',
+    title: 'Zestaw dnia (200 ml + 350g)',
     description: 'Zupa, danie główne – informacja u obsługi',
     price: '55'
   },
   {
     title: 'Kolacja zimna ( 400g )',
     description: '',
-    price: '40'
+    price: '48'
   }
 ];
 export const desserts = [
@@ -187,17 +187,17 @@ export const kidsMenu = [
   {
     title: 'Medaliony ze schabu (350g)',
     description: 'w delikatnym sosie pieczeniowym z ziemniakami puree i mizerią',
-    price: '30'
+    price: '34'
   },
   {
     title: 'Fileciki z kurczaka (300g)',
     description: 'panierowane z frytkami i surówką z marchewki',
-    price: '30'
+    price: '34'
   },
   {
     title: 'Paluszki rybne (300g)',
     description: 'z frytkami i surówką z marchewki',
-    price: '30'
+    price: '34'
   },
   {
     title: 'Frytki z ketchupem (150g)',
@@ -209,89 +209,69 @@ export const sides = [
   {
     title: 'Frytki z batatów (150g)',
     description: '',
-    price: '25'
+    price: '28'
   },
   {
     title: 'Zestaw surówek (400g)',
     description: '',
-    price: '12'
+    price: '15'
   },
   {
     title: 'Pieczywo (100g)',
     description: '',
-    price: '4'
+    price: '5'
   },
   {
     title: 'Sosy: ketchup, musztarda, sos czosnkowy (50g)',
     description: '',
-    price: '4'
+    price: '5'
   }
 ];
 export const hotDrinks = [
   {
-    title: 'Herbata (250ml)',
+    title: 'Herbata (Tea Sir William’s)',
     description: '',
     price: '10'
   },
   {
-    title: 'Herbata smakowa (250ml)',
-    description: '',
-    price: '12'
-  },
-  {
-    title: 'Herbata z syropem (250ml)',
-    description: '',
-    price: '12'
-  },
-  {
-    title: 'Kawa czarna (200ml)',
-    description: '',
-    price: '10'
-  },
-  {
-    title: 'Kawa biała (250ml)',
-    description: '',
-    price: '12'
-  },
-  {
-    title: 'Kawa po kozacku (250ml)',
+    title: 'Herbata z syropem imbirowym/malinowym',
     description: '',
     price: '15'
   },
   {
-    title: 'Espresso/doppio (30ml/60ml)',
-    description: '',
-    price: '8/12'
-  },
-  {
-    title: 'Cappuccino (200ml)',
+    title: 'Herbata Owocowa',
     description: '',
     price: '15'
   },
   {
-    title: 'Kawa mrożona (250ml)',
+    title: 'Kawa czarna',
+    description: '',
+    price: '12'
+  },
+  {
+    title: 'Kawa biała',
+    description: '',
+    price: '15'
+  },
+  {
+    title: 'Kawa latte',
     description: '',
     price: '18'
   },
   {
-    title: 'Caffé latte macchiato (250ml)',
+    title: 'Espresso',
     description: '',
-    price: '15'
+    price: '14'
   },
   {
-    title: 'Caffé mocha (200ml)',
+    title: 'Cappuccino',
     description: '',
-    price: '15'
-  },
-  {
-    title: 'Kakao z bitą śmietaną (250ml)',
-    description: '',
-    price: '15'
+    price: '18'
   }
 ];
 export const coldDrinks = [
   {
-    title: 'Pepsi, Pepsi Zero, Mirinda, 7Up, Schweppes (200ml)',
+    title: 'Pepsi, Mirinda, 7Up, Schweppes (200ml)',
     description: '',
     price: '8'
   },
@@ -301,98 +281,76 @@ export const coldDrinks = [
     price: '15'
   },
   {
-    title: 'Ice tea (250ml)',
-    description: '',
-    price: '8'
-  },
-  {
-    title: 'Sok owocowy (200ml)',
+    title: 'Sok pomarańczowy/jabłkowy (200ml)',
     description: '',
     price: '8'
   },
   {
     title: 'Sok owocowy (1 litr)',
     description: '',
-    price: '15'
+    price: '18'
   },
   {
-    title: 'Lemoniada (400ml)',
+    title: 'Lemoniada (250ml)',
     description: '',
     price: '6'
   },
   {
-    title: 'Lemoniada dzbanek (1.2 litr)',
-    description: '',
-    price: '15'
-  },
-  {
-    title: 'Woda (250ml)',
-    description: 'gazowana, niegazowana',
-    price: '5'
-  },
-  {
-    title: 'Woda dzbanek (1 litr)',
-    description: '',
-    price: '10'
-  },
-];
-export const tapBeer = [
-  {
-    title: 'Okocim beczka (0.3l)',
-    description: '',
-    price: '10'
-  },
-  {
-    title: 'Kozacki Lager beczka (0.3l)',
-    description: '',
-    price: '12'
-  },
-  {
-    title: 'Okocim beczka (0.5l)',
-    description: '',
-    price: '12'
-  },
-  {
-    title: 'Kozacki Lager beczka (0.5l)',
+    title: 'Lemoniada dzbanek (1 litr)',
     description: '',
     price: '18'
   },
+  {
+    title: 'Woda (300ml)',
+    description: 'gazowana, niegazowana',
+    price: '6'
+  },
+  {
+    title: 'Kwas chlebowy (300ml/1 litr)',
+    description: '',
+    price: '7/16'
+  },
+  {
+    title: 'Podpiwek (300ml/1 litr)',
+    description: '',
+    price: '7/16'
+  }
 ];
-export const bottledBeer = [
+export const beer = [
   {
-    title: 'Łomża jasne (0,5l)',
+    title: 'Piwo lane (300ml/500ml)',
+    description: '',
+    price: '12/15'
+  },
+  {
+    title: 'Piwo butelkowe (500ml)',
     description: '',
     price: '10'
   },
   {
-    title: 'Łomża Radler 0% (0,5l)',
+    title: 'Piwo BiesCzadowe (500ml)',
     description: '',
-    price: '10'
-  },
-  {
-    title: 'Łomża 0% (0,5l)',
-    description: '',
-    price: '10'
-  },
-  {
-    title: 'Heineken (0,5l)',
-    description: '',
-    price: '12'
-  },
-  {
-    title: 'Duch Sanu (0,5l)',
-    description: 'regionalne piwo',
     price: '15'
   },
   {
-    title: 'Góralskie (0,5l)',
-    description: 'regionalne piwo',
-    price: '15'
+    title: 'Piwo BiesCzadowe Zawijka (500ml)',
+    description: '',
+    price: '20'
   },
   {
     title: 'Grzaniec bieszczadzki (200ml)',
     description: '',
     price: '15'
+  },
+  {
+    title: 'Piwo Lvivskie 1715 (500ml)',
+    description: '',
+    price: '20'
+  },
+  {
+    title: 'Piwo Lvivskie Porter (500ml)',
+    description: '',
+    price: '22'
   },
 ];
 export const vodkaClear = [
@@ -402,9 +360,14 @@ export const vodkaClear = [
     price: '10/100'
   },
   {
-    title: 'Bieszczadzki zakapior (50ml/500ml)',
-    description: 'żyto, pszenica, ziemniak',
-    price: '10/100'
+    title: 'Wyborowa (50ml/500ml)',
+    description: '',
+    price: '8/60'
+  },
+  {
+    title: 'Żubrówka z trawą (50ml/500ml)',
+    description: '',
+    price: '8/60'
   },
 ];
 export const vodkaCraft = [
@@ -430,35 +393,21 @@ export const tequila = [
 ];
 export const liquors = [
   {
-    title: 'Jagermeister (50ml)',
+    title: 'Jagermeister (50ml/500ml)',
     description: '',
-    price: '15'
+    price: '15/160'
+  },
+  {
+  title: 'Malibu (50ml)',
+  description: '',
+  price: '18'
   },
 ];
 export const gin = [
   {
     title: 'Seagram’s (50ml)',
     description: '',
-    price: '15'
-  },
-];
-export const rum = [
-  {
-    title: 'Malibu (50ml)',
-    description: '',
-    price: '15'
-  },
-  {
-    title: 'Havana Club (50ml)',
-    description: '',
-    price: '15'
-  },
-];
-export const brandy = [
-  {
-    title: 'Grand Yerevan 7 yo (50ml)',
-    description: '',
-    price: '16'
+    price: '18'
   },
 ];
 export const bourbon = [
@@ -470,50 +419,65 @@ export const bourbon = [
   {
     title: 'Jim Beam (50ml/700ml)',
     description: '',
-    price: '15/180'
+    price: '15/150'
   },
 ];
 export const whisky = [
   {
-    title: 'Ballantines (50ml/700ml)',
+    title: 'Ballantine`s Finest(50ml/700ml)',
     description: '',
-    price: '15/180'
+    price: '15/150'
   },
   {
     title: 'Jameson (50ml/700ml)',
     description: '',
-    price: '15/180'
+    price: '17/180'
   },
   {
     title: 'Chivas 12YO (50ml/700ml)',
     description: '',
-    price: '20/240'
+    price: '22/240'
   },
   {
     title: 'Grant’s (50ml/700ml)',
     description: '',
-    price: '12/150'
+    price: '15/150'
   },
 ];
 export const cocktails = [
   {
-    title: 'Mohito/Double Mohito (300ml)',
-    description: 'Rum, limonka, cukier brązowy, mięta, woda gazowana',
-    price: '25/35'
-  },
-  {
-    title: 'Tequila Sunrise (300ml)',
-    description: 'Tequila, sok pomarańczowy, grenadyna',
+    title: 'Mojito',
+    description: 'rum, cząstki limonki, mięta, cukier trzcionowy, woda gazowana',
     price: '25'
   },
   {
-    title: 'Ekstravaganza (400ml)',
-    description: 'Wódka wataha, Malibu, likier blue curacao, grenadyna, sok pomarańczowy',
+    title: 'Gin & Tonic',
+    description: 'gin, tonic, sok z cytryny',
+    price: '22'
+  },
+  {
+    title: 'Campari Orange',
+    description: 'campari, sok pomarańczowy',
+    price: '26'
+  },
+  {
+    title: 'Tequila Sunrise',
+    description: 'tequila, sok pomarańczowy, grenadyna',
+    price: '27'
+  },
+  {
+    title: 'Kamikaze',
+    description: 'wódka, blue curacao, sok z cytyny i limonki',
+    price: '28'
+  },
+  {
+    title: 'Passoa Passion',
+    description: 'passoa, wódka, grenadyna',
     price: '25'
   },
   {
-    title: 'Malinowa rozkosz (300ml)',
-    description: 'Soplica malinowa, wódka wyataha, syrop malinowy, 7-up, cytryna',
+    title: 'Malibu Apple',
+    description: 'malibu, żubrówka z trawą, sok jabłkowy',
     price: '25'
   },
 ];

@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import {MenuListItemComponent} from "./menu-list-item/menu-list-item.component";
 import {
-  appetizers, bottledBeer, bourbon, brandy, cocktails, coldDrinks,
+  appetizers, beer, bourbon, cocktails, coldDrinks,
   desserts, gin,
   hotDrinks,
   hotSnacks,
   kidsMenu, liquors,
-  mainCourses, rum,
+  mainCourses,
   sides,
-  soups, tapBeer, tequila, vodkaClear, vodkaCraft, wermut, whisky
+  soups, tequila, vodkaClear, vodkaCraft, wermut, whisky
 } from "../../constants/menu.constants";
 
 @Component({
@@ -30,13 +30,10 @@ export class MenuListComponent {
   protected readonly sides = sides;
   protected readonly hotDrinks = hotDrinks;
   protected readonly coldDrinks = coldDrinks;
-  protected readonly tapBeer = tapBeer;
-  protected readonly bottledBeer = bottledBeer;
+  protected readonly beer = beer;
   protected readonly cocktails = cocktails;
   protected readonly whisky = whisky;
   protected readonly bourbon = bourbon;
-  protected readonly brandy = brandy;
-  protected readonly rum = rum;
   protected readonly gin = gin;
   protected readonly liquors = liquors;
   protected readonly tequila = tequila;

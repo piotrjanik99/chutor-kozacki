@@ -41,6 +41,7 @@ nav {
 .slogan{
   text-shadow: 2px 2px 1px rgba(0, 0, 0, 1);
   font-size: 20px;
+  margin-left: 50px;
   font-weight: bolder;
 }
 .navbar-toggler {
@@ -133,8 +134,13 @@ nav {
     width: 200px;
     height: 200px;
   }
-  .navbar-brand img {
-    width: 70px;
-    height: 70px;
+  .slogan{
+    margin: 0;
+  }
+}
+
+@media (min-width: 950px) {
+  nav {
+    height: 80px;
   }
 }

@@ -36,7 +36,7 @@
 
 @media (max-width: 950px) {
   .row {
-    margin-top: 20px;
+    margin-top: 100px;
     margin-left: 0;
     margin-right: 0;
   }
@@ -44,6 +44,7 @@
     height: 100%;
   }
   #team {
+    margin-top: 0 !important;
     height: 100%;
   }
   #contact {

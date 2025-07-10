@@ -171,16 +171,8 @@
           </h2>
           <div id="alcohol" class="accordion-collapse collapse" data-bs-parent="#menu">
             <div class="accordion-body">
-              <h2>Piwo beczkowe</h2>
-              @for ( item of tapBeer; track item.title) {
-                <app-menu-list-item
-                  [itemTitle]="item.title"
-                  [itemDescription]="item.description"
-                  [itemPrice]="item.price"
-                ></app-menu-list-item>
-              }
-              <h2>Piwo butelkowe, grzańce i ...</h2>
-              @for ( item of bottledBeer; track item.title) {
+              <h2>Piwo</h2>
+              @for ( item of beer; track item.title) {
                 <app-menu-list-item
                   [itemTitle]="item.title"
                   [itemDescription]="item.description"
@@ -229,22 +221,6 @@
               }
               <h2>Gin</h2>
               @for ( item of gin; track item.title) {
-                <app-menu-list-item
-                  [itemTitle]="item.title"
-                  [itemDescription]="item.description"
-                  [itemPrice]="item.price"
-                ></app-menu-list-item>
-              }
-              <h2>Rum</h2>
-              @for ( item of rum; track item.title) {
-                <app-menu-list-item
-                  [itemTitle]="item.title"
-                  [itemDescription]="item.description"
-                  [itemPrice]="item.price"
-                ></app-menu-list-item>
-              }
-              <h2>Brandy</h2>
-              @for ( item of brandy; track item.title) {
                 <app-menu-list-item
                   [itemTitle]="item.title"
                   [itemDescription]="item.description"

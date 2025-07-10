@@ -5,12 +5,13 @@ import {RouterLink} from "@angular/router";
   selector: 'app-header',
   standalone: true,
   imports: [
-    RouterLink
+    RouterLink,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
+  protected readonly window = window;
 }
 

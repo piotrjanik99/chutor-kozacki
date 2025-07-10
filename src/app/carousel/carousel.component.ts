@@ -15,12 +15,13 @@ export class CarouselComponent implements OnInit {
   images = input(['']);
   imageDescription = input(['']);
   imageTitle = input(['']);
+  hideButtons: boolean = false;
 
   carouselId!: string;
 
   ngOnInit(): void {
     this.imageTitle().map((imageTitle) => {
-      imageTitle === 'Szef kuchni' ? console.log('yes') : console.log('no');
+      imageTitle === 'Szef kuchni' ? this.hideButtons = true : this.hideButtons = false;
     })
     this.carouselId = 'carousel-' + Math.random().toString(36).substr(2, 9);
   }
