@@ -71,3 +71,9 @@
   margin-right: 0 !important;
   text-align: center;
 }
+
+@media (max-width: 950px) {
+  .divider-with-text {
+    margin: 0;
+  }
+}
