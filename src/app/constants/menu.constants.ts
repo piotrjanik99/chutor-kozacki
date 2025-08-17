@@ -88,7 +88,7 @@ export const mainCourses = [
   {
     title: 'Polędwiczka wieprzowa (350g)',
     description: 'gnocchi, sos z borowików, buraczki',
-    price: '38'
+    price: '55'
   },
   {
     title: 'Filet z kurczaka (400 g)',
