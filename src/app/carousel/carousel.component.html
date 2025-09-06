@@ -3,11 +3,11 @@
     <div *ngFor="let image of images(); let i = index"
          class="carousel-item"
          [class.active]="i === 0">
-      <div class="row">
-        <div class="col-12 col-md-5 text-center">
+      <div class="d-flex flex-wrap justify-content-center align-items-center">
+        <div class="flex-shrink-0 text-center me-md-3 mb-3 mb-md-0" style="max-width: 400px;">
           <img [ngSrc]="image" class="d-block mx-auto" [ngClass]="{'szef': image === 'gallery/szef.jpg'}" alt="..." width="400" height="400" loading="lazy">
         </div>
-        <div class="col-12 col-md-7 d-flex flex-column align-items-center mt-3 mt-md-0 justify-content-center">
+        <div class="flex-grow-1 d-flex flex-column align-items-center justify-content-center text-center text-md-start" style="min-width: 300px; max-width: 600px;">
           <span class="fw-bold fs-5">{{imageTitle()[i]}}</span>
           <span class="text-center">{{imageDescription()[i]}}</span>
         </div>
