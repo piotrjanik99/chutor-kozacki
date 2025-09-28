@@ -1,18 +1,19 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, inject, OnInit, Renderer2, TemplateRef, ViewChild} from '@angular/core';
 import {CarouselComponent} from "../carousel/carousel.component";
 import {ContactComponent} from "../contact/contact.component";
 import {MenuComponent} from "../menu/menu.component";
 import {FooterComponent} from "../footer/footer.component";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-    imports: [
-        CarouselComponent,
-        ContactComponent,
-        MenuComponent,
-        FooterComponent
-    ],
+  imports: [
+    CarouselComponent,
+    ContactComponent,
+    MenuComponent,
+    FooterComponent,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -24,12 +25,21 @@ export class HomeComponent implements OnInit {
   eventImage: string[] = [''];
   eventTitle: string[] = [''];
   eventImageDescription: string[] = [''];
+  @ViewChild('welcomeModal') welcomeModal!: TemplateRef<any>;
+  modalService = inject(NgbModal);
+  renderer = inject(Renderer2)
 
   constructor() {
 
   }
 
   ngOnInit(): void {
+    setTimeout(() => {
+      this.modalService.open(this.welcomeModal, {
+        animation: false,
+        centered: true
+      });
+    }, 1000)
     this.currentYear = new Date().getFullYear();
     this.staffImage = ['gallery/szef.jpg']
     this.staffTitle = ['Szef kuchni']

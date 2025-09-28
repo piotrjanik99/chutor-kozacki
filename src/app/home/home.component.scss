@@ -34,6 +34,15 @@
   text-align: center;
 }
 
+#welcomeModal {
+  z-index: 999;
+}
+
+.modal-image {
+  max-height: 90vh;
+  max-width: 90vw;
+}
+
 @media (max-width: 950px) {
   .row {
     margin-top: 150px;
