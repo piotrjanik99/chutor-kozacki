@@ -28,9 +28,9 @@
 <ng-template #welcomeModal let-modal>
   <div class="text-center position-relative">
     <button type="button"
-            class="btn-close position-absolute top-0 end-0 m-3 bg-white"
+            class="btn-close position-absolute top-0 end-0 m-3 bg-white z-3"
             (click)="modal.dismiss()">
     </button>
-    <img src="/promo-zdjecie.png" alt="promo" class="modal-image">
+    <video src="/promo.mp4" autoplay class="modal-image"></video>
   </div>
 </ng-template>
