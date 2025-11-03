@@ -39,10 +39,41 @@ nav {
     z-index: 998;
 }
 .slogan{
-  text-shadow: 2px 2px 1px rgba(0, 0, 0, 1);
-  font-size: 20px;
+  color:#ef8026;
+  text-shadow: 3px 3px 1px rgba(0, 0, 0, 1);
+  font-size: 22px;
   margin-left: 50px;
   font-weight: bolder;
+}
+.promo-text{
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 1);
+  font-size: 20px;
+  font-weight: bolder;
+}
+.promo-code {
+  font-size: 30px;
+}
+.promo-bg{
+  filter: blur(10px);
+  transform: scale(1.1);
+}
+.promo-container{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.btn {
+  background: #cc7700;
+  background: linear-gradient(90deg,rgba(204, 119, 0, 1) 0%, rgba(255, 168, 69, 1) 100%);
+}
+.btn-dark {
+  background-color: #000;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-dark:hover {
+  background-color: #333;
 }
 .navbar-toggler {
   border: none;

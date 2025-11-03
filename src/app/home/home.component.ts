@@ -1,4 +1,4 @@
-import {Component, inject, OnInit, Renderer2, TemplateRef, ViewChild} from '@angular/core';
+import {Component, inject, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {CarouselComponent} from "../carousel/carousel.component";
 import {ContactComponent} from "../contact/contact.component";
 import {MenuComponent} from "../menu/menu.component";
@@ -27,7 +27,6 @@ export class HomeComponent implements OnInit {
   eventImageDescription: string[] = [''];
   @ViewChild('welcomeModal') welcomeModal!: TemplateRef<any>;
   modalService = inject(NgbModal);
-  renderer = inject(Renderer2)
 
   constructor() {
 
