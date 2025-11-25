@@ -3,6 +3,8 @@
 }
 .row {
   margin-top: 50px;
+  margin-left: 150px;
+  margin-right: 150px;
 }
 
 .divider-with-text {
@@ -16,33 +18,8 @@
 .divider-with-text::after {
   content: '';
   flex: 1;
+  border-bottom: 2px solid black;
   margin: 0 10px;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
-}
-
-.placeholder {
-  min-height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f5f5f5;
-  border-radius: 4px;
-  color: #666;
-  opacity: 0.7;
 }
 
 .divider-with-text span {

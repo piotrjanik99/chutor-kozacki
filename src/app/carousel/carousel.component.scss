@@ -1,3 +1,7 @@
+.carousel-item {
+    padding-right: 200px;
+    padding-left: 200px;
+}
 .carousel-control-prev,
 .carousel-control-next {
   opacity: 1 !important; /* Force full opacity always */
@@ -51,14 +55,5 @@
   }
   .szef {
     width: 100% !important;
-  }
-}
-
-@media (min-width: 800px) {
-  .image-title {
-    font-size: 26px !important;
-  }
-  .image-description  {
-    font-size: 20px;
   }
 }

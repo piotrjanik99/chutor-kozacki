@@ -1,59 +1,26 @@
 <div class="row gx-0 team" id="team">
-  @defer (on viewport) {
-    <div class="fade-in">
-      <app-carousel purpose="Załoga" [images]="staffImage" [imageTitle]="staffTitle" [imageDescription]="staffImageDescription"></app-carousel>
-    </div>
-  } @placeholder {
-    <div class="placeholder">Loading team section...</div>
-  }
+  <app-carousel purpose="Załoga" [images]="staffImage" [imageTitle]="staffTitle" [imageDescription]="staffImageDescription"></app-carousel>
 </div>
-
 <div class="row gx-0 menu">
-  @defer (on viewport) {
-    <div class="fade-in">
-      <app-menu class="mt-5"></app-menu>
-    </div>
-  } @placeholder {
-    <div class="placeholder">Loading menu...</div>
-  }
+  <app-menu class="mt-5"></app-menu>
 </div>
-
 <div class="row gx-0 events" id="events">
   <div class="divider-with-text">
     <span class="menu-header">Wydarzenia</span>
   </div>
-  @defer (on viewport) {
-    <div class="fade-in">
-      <app-carousel purpose="Wydarzenia" [images]="eventImage" [imageTitle]="eventTitle" [imageDescription]="eventImageDescription"></app-carousel>
-    </div>
-  } @placeholder {
-    <div class="placeholder">Loading events...</div>
-  }
+  <app-carousel purpose="Wydarzenia" [images]="eventImage" [imageTitle]="eventTitle" [imageDescription]="eventImageDescription"></app-carousel>
 </div>
-
 <div class="row gx-0 contact" id="contact">
   <div class="divider-with-text">
     <span class="menu-header">Kontakt</span>
   </div>
-  @defer (on viewport) {
-    <div class="fade-in">
-      <app-contact></app-contact>
-    </div>
-  } @placeholder {
-    <div class="placeholder">Loading contact section...</div>
-  }
+  <app-contact></app-contact>
 </div>
-
 <div class="row gx-0 footer mt-5">
-  @defer (on viewport) {
-    <div class="fade-in">
-      <app-footer></app-footer>
-    </div>
-  } @placeholder {
-    <div class="placeholder">Loading footer...</div>
-  }
+  <app-footer></app-footer>
   <span>Chutor Kozacki {{currentYear}}</span>
 </div>
+
 
 <ng-template #welcomeModal let-modal>
   <div class="text-center position-relative">
@@ -61,6 +28,6 @@
             class="btn-close position-absolute top-0 end-0 m-3 bg-white z-3"
             (click)="modal.dismiss()">
     </button>
-    <img src="/sylwester.jpg" class="modal-image z-2" alt="Welcome promo">
+    <img src="/promo-zdjecie.png" class="modal-image z-2" alt="Welcome promo">
   </div>
 </ng-template>
