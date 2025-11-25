@@ -11,14 +11,14 @@ export const routes: Routes = [
   },
   {
     path: 'gallery',
-    component: GalleryComponent,
+    loadComponent:() => GalleryComponent,
   },
   {
     path: 'order',
-    component: OrderComponent,
+    loadComponent:() => OrderComponent,
   },
   {
     path: 'promo',
-    component: PromoComponent
+    loadComponent:() => PromoComponent
   }
 ];
