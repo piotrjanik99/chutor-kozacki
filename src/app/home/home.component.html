@@ -1,23 +1,57 @@
 <div class="row gx-0 team" id="team">
-  <app-carousel purpose="Załoga" [images]="staffImage" [imageTitle]="staffTitle" [imageDescription]="staffImageDescription"></app-carousel>
+  @defer (on viewport) {
+    <div class="fade-in">
+      <app-carousel purpose="Załoga" [images]="staffImage" [imageTitle]="staffTitle" [imageDescription]="staffImageDescription"></app-carousel>
+    </div>
+  } @placeholder {
+    <div class="placeholder">Loading team section...</div>
+  }
 </div>
+
 <div class="row gx-0 menu">
-  <app-menu class="mt-5"></app-menu>
+  @defer (on viewport) {
+    <div class="fade-in">
+      <app-menu class="mt-5"></app-menu>
+    </div>
+  } @placeholder {
+    <div class="placeholder">Loading menu...</div>
+  }
 </div>
+
 <div class="row gx-0 events" id="events">
   <div class="divider-with-text">
     <span class="menu-header">Wydarzenia</span>
   </div>
-  <app-carousel purpose="Wydarzenia" [images]="eventImage" [imageTitle]="eventTitle" [imageDescription]="eventImageDescription"></app-carousel>
+  @defer (on viewport) {
+    <div class="fade-in">
+      <app-carousel purpose="Wydarzenia" [images]="eventImage" [imageTitle]="eventTitle" [imageDescription]="eventImageDescription"></app-carousel>
+    </div>
+  } @placeholder {
+    <div class="placeholder">Loading events...</div>
+  }
 </div>
+
 <div class="row gx-0 contact" id="contact">
   <div class="divider-with-text">
     <span class="menu-header">Kontakt</span>
   </div>
-  <app-contact></app-contact>
+  @defer (on viewport) {
+    <div class="fade-in">
+      <app-contact></app-contact>
+    </div>
+  } @placeholder {
+    <div class="placeholder">Loading contact section...</div>
+  }
 </div>
+
 <div class="row gx-0 footer mt-5">
-  <app-footer></app-footer>
+  @defer (on viewport) {
+    <div class="fade-in">
+      <app-footer></app-footer>
+    </div>
+  } @placeholder {
+    <div class="placeholder">Loading footer...</div>
+  }
   <span>Chutor Kozacki {{currentYear}}</span>
 </div>
 

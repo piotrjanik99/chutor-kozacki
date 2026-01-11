@@ -7,18 +7,18 @@ import {PromoComponent} from "./promo/promo.component";
 export const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    loadComponent:() => HomeComponent
   },
   {
     path: 'gallery',
-    component: GalleryComponent,
+    loadComponent:() => GalleryComponent,
   },
   {
     path: 'order',
-    component: OrderComponent,
+    loadComponent:() => OrderComponent,
   },
   {
     path: 'promo',
-    component: PromoComponent
+    loadComponent:() => PromoComponent
   }
 ];

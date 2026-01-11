@@ -1,6 +1,6 @@
 .carousel-item {
-    padding-right: 200px;
-    padding-left: 200px;
+    padding-right: 40px;
+    padding-left: 40px;
 }
 .carousel-control-prev,
 .carousel-control-next {
@@ -55,5 +55,13 @@
   }
   .szef {
     width: 100% !important;
+  }
+}
+@media (min-width: 800px) {
+  .image-title {
+    font-size: 26px !important;
+  }
+  .image-description  {
+    font-size: 20px;
   }
 }
