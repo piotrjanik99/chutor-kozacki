@@ -33,12 +33,12 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    setTimeout(() => {
+    /*setTimeout(() => {
       this.modalService.open(this.welcomeModal, {
         animation: false,
         centered: true
       });
-    }, 1000)
+    }, 1000)*/
     this.currentYear = new Date().getFullYear();
     this.staffImage = ['gallery/szef.jpg']
     this.staffTitle = ['Szef kuchni']
