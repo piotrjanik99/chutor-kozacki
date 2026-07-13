@@ -1,0 +1,11 @@
+<div class="section-header">
+  @if (level() === 'h1') {
+    <h1 class="section-header-title">{{ title() }}</h1>
+  } @else {
+    <h2 class="section-header-title">{{ title() }}</h2>
+  }
+  <span class="section-header-accent"></span>
+  @if (subtitle()) {
+    <span class="section-header-subtitle">{{ subtitle() }}</span>
+  }
+</div>

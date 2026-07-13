@@ -1,0 +1,31 @@
+// Mobile-first breakpoints, aligned with Bootstrap 5's grid (sm/md/lg/xl)
+// so custom CSS and the col-sm-*/col-md-*/col-lg-* classes in templates
+// switch at the same viewport widths.
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+@mixin sm {
+  @media (min-width: $sm) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: $lg) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: $xl) {
+    @content;
+  }
+}

@@ -1,0 +1,22 @@
+@use 'breakpoints' as bp;
+
+@mixin footer-panel {
+  background: linear-gradient(135deg, #1c1309 0%, #2B2017 55%, #40311c 100%);
+  border-radius: 28px 28px 0 0;
+  padding: 2.5rem 1.5rem 2rem;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: center;
+
+  @include bp.lg {
+    padding: 3.5rem 2rem 2.5rem;
+  }
+}
+
+@mixin footer-copyright {
+  display: block;
+  margin-top: 1.25rem;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  color: rgba(255, 255, 255, 0.55);
+}
