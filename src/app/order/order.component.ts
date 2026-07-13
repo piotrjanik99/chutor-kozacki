@@ -1,14 +1,18 @@
-import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, inject, PLATFORM_ID, ViewChild} from '@angular/core';
+import {isPlatformBrowser} from '@angular/common';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {init, send} from "@emailjs/browser";
 import {FooterComponent} from "../footer/footer.component";
+import {SectionHeaderComponent} from "../section-header/section-header.component";
+import {SeoService} from "../services/seo.service";
 
 @Component({
   selector: 'app-order',
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    FooterComponent
+    FooterComponent,
+    SectionHeaderComponent
   ],
   templateUrl: './order.component.html',
   styleUrl: './order.component.scss'
@@ -17,6 +21,8 @@ export class OrderComponent implements AfterViewInit{
   quoteForm: FormGroup;
   showOtherEventInput = false;
   @ViewChild('orderTop') orderTop!: ElementRef;
+  private seo = inject(SeoService);
+  private platformId = inject(PLATFORM_ID);
 
   constructor(private fb: FormBuilder) {
     this.quoteForm = this.fb.group({
@@ -26,9 +32,15 @@ export class OrderComponent implements AfterViewInit{
       guestCount: ['', [Validators.required, Validators.min(1)]],
       eventDescription: ['', Validators.required]
     });
+    this.seo.setPageSeo({
+      path: '/order',
+      title: 'Zorganizuj przyjęcie - Chutor Kozacki Restauracja',
+      description: 'Zorganizuj wesele, komunię lub inną uroczystość w restauracji Chutor Kozacki w Bieszczadach. Wypełnij formularz i otrzymaj indywidualną wycenę.'
+    });
   }
 
   ngAfterViewInit() {
+    if (!isPlatformBrowser(this.platformId)) return;
     setTimeout(() => {
       this.orderTop.nativeElement.scrollIntoView({
         behavior: 'smooth',

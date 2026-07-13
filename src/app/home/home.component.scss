@@ -1,25 +1,24 @@
+@use 'breakpoints' as bp;
+@use 'footer-panel' as fp;
+
 .contact, .events, .team, .menu {
   color: black;
 }
 .row {
-  margin-top: 50px;
-  margin-left: 150px;
-  margin-right: 150px;
+  margin-top: 40px;
+  margin-left: clamp(0px, 5vw, 150px);
+  margin-right: clamp(0px, 5vw, 150px);
 }
 
-.divider-with-text {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin: 20px 0;
+#events {
+  height: 100%;
 }
-
-.divider-with-text::before,
-.divider-with-text::after {
-  content: '';
-  flex: 1;
-  border-bottom: 2px solid black;
-  margin: 0 10px;
+#team {
+  margin-top: 0 !important;
+  height: 100%;
+}
+#contact {
+  height: 100%;
 }
 
 @keyframes fadeIn {
@@ -49,16 +48,12 @@
 }
 
 
-.divider-with-text span {
-  color: black;
-  font-size: 42px;
-}
 .footer {
-  background: #2B2017;
-  background: linear-gradient(90deg, rgba(43, 32, 23, 1) 0%, rgba(71, 57, 34, 1) 100%);
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  text-align: center;
+  @include fp.footer-panel;
+}
+
+.footer-copyright {
+  @include fp.footer-copyright;
 }
 
 #welcomeModal {
@@ -70,24 +65,11 @@
   max-width: 90vw;
 }
 
-@media (max-width: 950px) {
+@include bp.lg {
   .row {
-    margin-top: 150px;
-    margin-left: 0;
-    margin-right: 0;
-  }
-  #events {
-    height: 100%;
+    margin-top: 50px;
   }
   #team {
-    margin-top: 0 !important;
-    height: 100%;
-  }
-  #contact {
-    height: 100%;
-    margin-bottom: 490px
-  }
-  .footer {
-    height: 100%;
+    margin-top: 40px !important;
   }
 }

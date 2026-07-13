@@ -1,16 +1,61 @@
-.contact-box {
+@use 'breakpoints' as bp;
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(43, 32, 23, 0.08);
+}
+
+.map-pane {
+  position: relative;
+  display: block;
+  height: 280px;
+}
+.map-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+.map-pane:hover .map-image,
+.map-pane:focus-visible .map-image {
+  transform: scale(1.05);
+}
+.map-badge {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #2B2017;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 12px;
+  border-radius: 999px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.info-pane {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background: #2B2017;
   background: linear-gradient(90deg, rgba(43, 32, 23, 1) 0%, rgba(71, 57, 34, 1) 100%);
   color: white;
+  padding: 1.5rem 1rem;
+  gap: 0.5rem;
 }
 .icon-text {
   padding-left: 10px;
 }
 .contact-row {
-  padding-top: 15px;
-}
-.row {
-    height: 350px;
+  padding-top: 0;
 }
 .minimalist-style {
   background-color: #fafafa;
@@ -30,15 +75,22 @@
 .letter-spacing-1 {
   letter-spacing: 1px;
 }
-@media (max-width: 950px) {
+
+@include bp.lg {
+  .contact-card {
+    flex-direction: row;
+    height: 380px;
+  }
+  .map-pane {
+    width: 62%;
+    height: 100%;
+  }
+  .info-pane {
+    width: 38%;
+    height: 100%;
+    padding: 0 2rem;
+  }
   .contact-row {
-    padding-top: 0;
-  }
-  .contact-box {
-    height: 400px;
-    gap: 20px;
-  }
-  .map {
-    height: 400px;
+    padding-top: 15px;
   }
 }

@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'breakpoints' as bp;
+
 body {
     margin: 0 auto;
     font-family: "Poppins", sans-serif;
@@ -6,7 +8,13 @@ body {
     background-color: #F4F2EF;
 }
 html {
-  scroll-padding-top: 80px;
+  scroll-padding-top: 60px;
+}
+
+@include bp.lg {
+  html {
+    scroll-padding-top: 80px;
+  }
 }
 
 .modal-content {

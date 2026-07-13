@@ -19,12 +19,10 @@
 </div>
 
 <div class="row gx-0 events" id="events">
-  <div class="divider-with-text">
-    <span class="menu-header">Wydarzenia</span>
-  </div>
+  <app-section-header title="Wydarzenia"></app-section-header>
   @defer (on viewport) {
     <div class="fade-in">
-      <app-carousel purpose="Wydarzenia" [images]="eventImage" [imageTitle]="eventTitle" [imageDescription]="eventImageDescription"></app-carousel>
+      <app-carousel purpose="Wydarzenia" [images]="eventImage" [imageTitle]="eventTitle" [imageDescription]="eventImageDescription" [descriptionHeight]="{ base: 330, md: 275, lg: 220 }"></app-carousel>
     </div>
   } @placeholder {
     <div class="placeholder">Loading events...</div>
@@ -32,9 +30,7 @@
 </div>
 
 <div class="row gx-0 contact" id="contact">
-  <div class="divider-with-text">
-    <span class="menu-header">Kontakt</span>
-  </div>
+  <app-section-header title="Kontakt"></app-section-header>
   @defer (on viewport) {
     <div class="fade-in">
       <app-contact></app-contact>
@@ -52,7 +48,7 @@
   } @placeholder {
     <div class="placeholder">Loading footer...</div>
   }
-  <span>Chutor Kozacki {{currentYear}}</span>
+  <span class="footer-copyright">Chutor Kozacki {{currentYear}}</span>
 </div>
 
 
@@ -62,6 +58,6 @@
             class="btn-close position-absolute top-0 end-0 m-3 bg-white z-3"
             (click)="modal.dismiss()">
     </button>
-    <img src="/plakat-luty.jpg" class="modal-image z-2" alt="Welcome promo">
+    <img src="/plakat-luty.jpg" class="modal-image z-2" alt="Aktualna promocja restauracji Chutor Kozacki">
   </div>
 </ng-template>

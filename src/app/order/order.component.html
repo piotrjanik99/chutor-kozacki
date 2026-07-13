@@ -1,5 +1,5 @@
-<div class="divider-with-text" #orderTop>
-  <span class="menu-header">Zorganizujemy twoje przyjęcie <br> <h5>Wypełnij proszę poniższy formularz</h5></span>
+<div #orderTop>
+  <app-section-header title="Zorganizujemy twoje przyjęcie" subtitle="Wypełnij proszę poniższy formularz" level="h1"></app-section-header>
 </div>
 
 <form [formGroup]="quoteForm" (ngSubmit)="submitQuote()" novalidate class="minimalist-style">
@@ -43,5 +43,5 @@
 
 <div class="row gx-0 footer mt-5">
   <app-footer></app-footer>
-  <span>Chutor Kozacki </span>
+  <span class="footer-copyright">Chutor Kozacki </span>
 </div>

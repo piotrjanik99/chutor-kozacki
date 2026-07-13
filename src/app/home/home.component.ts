@@ -3,7 +3,9 @@ import {CarouselComponent} from "../carousel/carousel.component";
 import {ContactComponent} from "../contact/contact.component";
 import {MenuComponent} from "../menu/menu.component";
 import {FooterComponent} from "../footer/footer.component";
+import {SectionHeaderComponent} from "../section-header/section-header.component";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {SeoService} from "../services/seo.service";
 
 @Component({
   selector: 'app-home',
@@ -13,6 +15,7 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
     ContactComponent,
     MenuComponent,
     FooterComponent,
+    SectionHeaderComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -27,6 +30,7 @@ export class HomeComponent implements OnInit {
   eventImageDescription: string[] = [''];
   @ViewChild('welcomeModal') welcomeModal!: TemplateRef<any>;
   modalService = inject(NgbModal);
+  private seo = inject(SeoService);
 
   constructor() {
 
@@ -39,6 +43,46 @@ export class HomeComponent implements OnInit {
         centered: true
       });
     }, 1000)*/
+    this.seo.setPageSeo({
+      path: '/',
+      title: 'Chutor Kozacki - Restauracja w Bieszczadach | Łukowe',
+      description: 'Chutor Kozacki to restauracja w sercu Bieszczad (Łukowe), serwująca kuchnię kresową i regionalną. Organizujemy wesela, komunie i imprezy okolicznościowe do 250 osób.'
+    });
+    this.seo.setJsonLd('restaurant-jsonld', {
+      '@context': 'https://schema.org',
+      '@type': 'Restaurant',
+      '@id': 'https://chutor-kozacki-restauracja.pl/',
+      name: 'Chutor Kozacki - Restauracja',
+      url: 'https://chutor-kozacki-restauracja.pl/',
+      image: [
+        'https://chutor-kozacki-restauracja.pl/bg2.jpg',
+        'https://chutor-kozacki-restauracja.pl/LOGO_BAZA.png'
+      ],
+      telephone: '+48694870617',
+      email: 'kontakt@chutor-kozacki-restauracja.pl',
+      priceRange: '$$',
+      servesCuisine: ['Kuchnia polska', 'Kuchnia kresowa', 'Kuchnia regionalna'],
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Łukowe 105',
+        addressLocality: 'Łukowe',
+        postalCode: '38-540',
+        addressCountry: 'PL'
+      },
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Thursday', 'Friday', 'Saturday', 'Sunday'],
+          opens: '12:00',
+          closes: '19:00'
+        }
+      ],
+      sameAs: [
+        'https://www.facebook.com/profile.php?id=61559120176701',
+        'https://www.instagram.com/chutor_kozacki_restauracja/'
+      ],
+      menu: 'https://chutor-kozacki-restauracja.pl/#specialDishes'
+    });
     this.currentYear = new Date().getFullYear();
     this.staffImage = ['gallery/szef.jpg']
     this.staffTitle = ['Szef kuchni']

@@ -1,262 +1,268 @@
-<div class="container mt-4">
-  <div class="row">
-    <div class="accordion" id="menu">
-      <div class="accordion-item border-0">
-        <h2 class="accordion-header">
-          <button class="accordion-button p-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#appetizers" aria-expanded="true" aria-controls="appetizers">
-            <h3 class="text-black">Przekąski zimne</h3>
-          </button>
-        </h2>
-        <div id="appetizers" class="accordion-collapse collapse" data-bs-parent="#menu">
-          <div class="accordion-body">
-            @for ( item of appetizers; track item.title) {
-              <app-menu-list-item
-                [itemTitle]="item.title"
-                [itemDescription]="item.description"
-                [itemPrice]="item.price"
-              ></app-menu-list-item>
-            }
-          </div>
+<div class="menu-wrap">
+  <div class="accordion" id="menu">
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#appetizers" aria-expanded="false" aria-controls="appetizers">
+          Przekąski zimne
+        </button>
+      </h2>
+      <div id="appetizers" class="accordion-collapse collapse" data-bs-parent="#menu">
+        <div class="accordion-body">
+          @for ( item of appetizers; track item.title) {
+            <app-menu-list-item
+              [itemTitle]="item.title"
+              [itemDescription]="item.description"
+              [itemPrice]="item.price"
+            ></app-menu-list-item>
+          }
+        </div>
       </div>
     </div>
-      <div class="accordion-item border-0">
-        <h2 class="accordion-header">
-          <button class="accordion-button p-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#hotSnacks" aria-expanded="true" aria-controls="hotSnacks">
-            <h3 class="text-black">Przekąski gorące</h3>
-          </button>
-        </h2>
-        <div id="hotSnacks" class="accordion-collapse collapse" data-bs-parent="#menu">
-          <div class="accordion-body">
-            @for ( item of hotSnacks; track item.title) {
-              <app-menu-list-item
-                [itemTitle]="item.title"
-                [itemDescription]="item.description"
-                [itemPrice]="item.price"
-              ></app-menu-list-item>
-            }
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item border-0">
-        <h2 class="accordion-header">
-          <button class="accordion-button p-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#soups" aria-expanded="true" aria-controls="soups">
-            <h3 class="text-black">Zupy</h3>
-          </button>
-        </h2>
-        <div id="soups" class="accordion-collapse collapse" data-bs-parent="#menu">
-          <div class="accordion-body">
-            @for ( item of soups; track item.title) {
-            <app-menu-list-item
-              [itemTitle]="item.title"
-              [itemDescription]="item.description"
-              [itemPrice]="item.price"
-            ></app-menu-list-item>
-          }
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item border-0">
-        <h2 class="accordion-header">
-          <button class="accordion-button p-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainCourses" aria-expanded="true" aria-controls="mainCourses">
-            <h3 class="text-black">Dania główne</h3>
-          </button>
-        </h2>
-        <div id="mainCourses" class="accordion-collapse collapse" data-bs-parent="#menu">
-          <div class="accordion-body">
-            @for ( item of mainCourses; track item.title) {
-            <app-menu-list-item
-              [itemTitle]="item.title"
-              [itemDescription]="item.description"
-              [itemPrice]="item.price"
-            ></app-menu-list-item>
-          }
-          </div>
-        </div>
-        <div class="accordion-item border-0">
-          <h2 class="accordion-header">
-            <button class="accordion-button p-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#desserts" aria-expanded="true" aria-controls="desserts">
-              <h3 class="text-black">Desery</h3>
-            </button>
-          </h2>
-          <div id="desserts" class="accordion-collapse collapse" data-bs-parent="#menu">
-            <div class="accordion-body">
-              @for ( item of desserts; track item.title) {
-                <app-menu-list-item
-                  [itemTitle]="item.title"
-                  [itemDescription]="item.description"
-                  [itemPrice]="item.price"
-                ></app-menu-list-item>
-              }
-            </div>
-          </div>
-          <div class="accordion-item border-0">
-            <h2 class="accordion-header">
-              <button class="accordion-button p-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#kidsMenu" aria-expanded="true" aria-controls="kidsMenu">
-                <h3 class="text-black">Dla dzieci</h3>
-              </button>
-            </h2>
-            <div id="kidsMenu" class="accordion-collapse collapse" data-bs-parent="#menu">
-              <div class="accordion-body">
-                @for ( item of kidsMenu; track item.title) {
-                  <app-menu-list-item
-                    [itemTitle]="item.title"
-                    [itemDescription]="item.description"
-                    [itemPrice]="item.price"
-                  ></app-menu-list-item>
-                }
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item border-0">
-        <h2 class="accordion-header">
-          <button class="accordion-button p-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#sides" aria-expanded="true" aria-controls="sides">
-            <h3 class="text-black">Dodatki</h3>
-          </button>
-        </h2>
-        <div id="sides" class="accordion-collapse collapse" data-bs-parent="#menu">
-          <div class="accordion-body">
-            @for ( item of sides; track item.title) {
-              <app-menu-list-item
-                [itemTitle]="item.title"
-                [itemDescription]="item.description"
-                [itemPrice]="item.price"
-              ></app-menu-list-item>
-            }
-          </div>
-        </div>
-      </div>
-          <div class="accordion-item border-0">
-        <h2 class="accordion-header">
-          <button class="accordion-button p-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#hotDrinks" aria-expanded="true" aria-controls="hotDrinks">
-            <h3 class="text-black">Napoje ciepłe</h3>
-          </button>
-        </h2>
-        <div id="hotDrinks" class="accordion-collapse collapse" data-bs-parent="#menu">
-          <div class="accordion-body">
-            @for ( item of hotDrinks; track item.title) {
-              <app-menu-list-item
-                [itemTitle]="item.title"
-                [itemDescription]="item.description"
-                [itemPrice]="item.price"
-              ></app-menu-list-item>
-            }
-          </div>
-        </div>
-      </div>
 
-          <div class="accordion-item border-0">
-        <h2 class="accordion-header">
-          <button class="accordion-button p-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#coldDrinks" aria-expanded="true" aria-controls="coldDrinks">
-            <h3 class="text-black">Napoje zimne</h3>
-          </button>
-        </h2>
-        <div id="coldDrinks" class="accordion-collapse collapse" data-bs-parent="#menu">
-          <div class="accordion-body">
-            @for ( item of coldDrinks; track item.title) {
-              <app-menu-list-item
-                [itemTitle]="item.title"
-                [itemDescription]="item.description"
-                [itemPrice]="item.price"
-              ></app-menu-list-item>
-            }
-          </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hotSnacks" aria-expanded="false" aria-controls="hotSnacks">
+          Przekąski gorące
+        </button>
+      </h2>
+      <div id="hotSnacks" class="accordion-collapse collapse" data-bs-parent="#menu">
+        <div class="accordion-body">
+          @for ( item of hotSnacks; track item.title) {
+            <app-menu-list-item
+              [itemTitle]="item.title"
+              [itemDescription]="item.description"
+              [itemPrice]="item.price"
+            ></app-menu-list-item>
+          }
         </div>
       </div>
-      <div class="accordion">
-        <div class="accordion-item border-0">
-          <h2 class="accordion-header">
-            <button class="accordion-button p-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#alcohol" aria-expanded="true" aria-controls="alcohol">
-              <h3 class="text-black">Alkohole</h3>
-            </button>
-          </h2>
-          <div id="alcohol" class="accordion-collapse collapse" data-bs-parent="#menu">
-            <div class="accordion-body">
-              <h2>Piwo</h2>
-              @for ( item of beer; track item.title) {
-                <app-menu-list-item
-                  [itemTitle]="item.title"
-                  [itemDescription]="item.description"
-                  [itemPrice]="item.price"
-                ></app-menu-list-item>
-              }
-              <h2>Wódki czyste</h2>
-              @for ( item of vodkaClear; track item.title) {
-                <app-menu-list-item
-                  [itemTitle]="item.title"
-                  [itemDescription]="item.description"
-                  [itemPrice]="item.price"
-                ></app-menu-list-item>
-              }
-              <h2>Wódki gatunkowe</h2>
-              @for ( item of vodkaCraft; track item.title) {
-                <app-menu-list-item
-                  [itemTitle]="item.title"
-                  [itemDescription]="item.description"
-                  [itemPrice]="item.price"
-                ></app-menu-list-item>
-              }
-              <h2>Wermut</h2>
-              @for ( item of wermut; track item.title) {
-                <app-menu-list-item
-                  [itemTitle]="item.title"
-                  [itemDescription]="item.description"
-                  [itemPrice]="item.price"
-                ></app-menu-list-item>
-              }
-              <h2>Tequila</h2>
-              @for ( item of tequila; track item.title) {
-                <app-menu-list-item
-                  [itemTitle]="item.title"
-                  [itemDescription]="item.description"
-                  [itemPrice]="item.price"
-                ></app-menu-list-item>
-              }
-              <h2>Likiery</h2>
-              @for ( item of liquors; track item.title) {
-                <app-menu-list-item
-                  [itemTitle]="item.title"
-                  [itemDescription]="item.description"
-                  [itemPrice]="item.price"
-                ></app-menu-list-item>
-              }
-              <h2>Gin</h2>
-              @for ( item of gin; track item.title) {
-                <app-menu-list-item
-                  [itemTitle]="item.title"
-                  [itemDescription]="item.description"
-                  [itemPrice]="item.price"
-                ></app-menu-list-item>
-              }
-              <h2>Bourbon</h2>
-              @for ( item of bourbon; track item.title) {
-                <app-menu-list-item
-                  [itemTitle]="item.title"
-                  [itemDescription]="item.description"
-                  [itemPrice]="item.price"
-                ></app-menu-list-item>
-              }
-              <h2>Whisky</h2>
-              @for ( item of whisky; track item.title) {
-                <app-menu-list-item
-                  [itemTitle]="item.title"
-                  [itemDescription]="item.description"
-                  [itemPrice]="item.price"
-                ></app-menu-list-item>
-              }
-              <h2>Koktajle</h2>
-              @for ( item of cocktails; track item.title) {
-                <app-menu-list-item
-                  [itemTitle]="item.title"
-                  [itemDescription]="item.description"
-                  [itemPrice]="item.price"
-                ></app-menu-list-item>
-              }
-            </div>
-          </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#soups" aria-expanded="false" aria-controls="soups">
+          Zupy
+        </button>
+      </h2>
+      <div id="soups" class="accordion-collapse collapse" data-bs-parent="#menu">
+        <div class="accordion-body">
+          @for ( item of soups; track item.title) {
+            <app-menu-list-item
+              [itemTitle]="item.title"
+              [itemDescription]="item.description"
+              [itemPrice]="item.price"
+            ></app-menu-list-item>
+          }
         </div>
-  </div>
-</div>
-  </div>
-</div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mainCourses" aria-expanded="false" aria-controls="mainCourses">
+          Dania główne
+        </button>
+      </h2>
+      <div id="mainCourses" class="accordion-collapse collapse" data-bs-parent="#menu">
+        <div class="accordion-body">
+          @for ( item of mainCourses; track item.title) {
+            <app-menu-list-item
+              [itemTitle]="item.title"
+              [itemDescription]="item.description"
+              [itemPrice]="item.price"
+            ></app-menu-list-item>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#desserts" aria-expanded="false" aria-controls="desserts">
+          Desery
+        </button>
+      </h2>
+      <div id="desserts" class="accordion-collapse collapse" data-bs-parent="#menu">
+        <div class="accordion-body">
+          @for ( item of desserts; track item.title) {
+            <app-menu-list-item
+              [itemTitle]="item.title"
+              [itemDescription]="item.description"
+              [itemPrice]="item.price"
+            ></app-menu-list-item>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#kidsMenu" aria-expanded="false" aria-controls="kidsMenu">
+          Dla dzieci
+        </button>
+      </h2>
+      <div id="kidsMenu" class="accordion-collapse collapse" data-bs-parent="#menu">
+        <div class="accordion-body">
+          @for ( item of kidsMenu; track item.title) {
+            <app-menu-list-item
+              [itemTitle]="item.title"
+              [itemDescription]="item.description"
+              [itemPrice]="item.price"
+            ></app-menu-list-item>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sides" aria-expanded="false" aria-controls="sides">
+          Dodatki
+        </button>
+      </h2>
+      <div id="sides" class="accordion-collapse collapse" data-bs-parent="#menu">
+        <div class="accordion-body">
+          @for ( item of sides; track item.title) {
+            <app-menu-list-item
+              [itemTitle]="item.title"
+              [itemDescription]="item.description"
+              [itemPrice]="item.price"
+            ></app-menu-list-item>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hotDrinks" aria-expanded="false" aria-controls="hotDrinks">
+          Napoje ciepłe
+        </button>
+      </h2>
+      <div id="hotDrinks" class="accordion-collapse collapse" data-bs-parent="#menu">
+        <div class="accordion-body">
+          @for ( item of hotDrinks; track item.title) {
+            <app-menu-list-item
+              [itemTitle]="item.title"
+              [itemDescription]="item.description"
+              [itemPrice]="item.price"
+            ></app-menu-list-item>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#coldDrinks" aria-expanded="false" aria-controls="coldDrinks">
+          Napoje zimne
+        </button>
+      </h2>
+      <div id="coldDrinks" class="accordion-collapse collapse" data-bs-parent="#menu">
+        <div class="accordion-body">
+          @for ( item of coldDrinks; track item.title) {
+            <app-menu-list-item
+              [itemTitle]="item.title"
+              [itemDescription]="item.description"
+              [itemPrice]="item.price"
+            ></app-menu-list-item>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#alcohol" aria-expanded="false" aria-controls="alcohol">
+          Alkohole
+        </button>
+      </h2>
+      <div id="alcohol" class="accordion-collapse collapse" data-bs-parent="#menu">
+        <div class="accordion-body">
+          <span class="spirit-group-header">Piwo</span>
+          @for ( item of beer; track item.title) {
+            <app-menu-list-item
+              [itemTitle]="item.title"
+              [itemDescription]="item.description"
+              [itemPrice]="item.price"
+            ></app-menu-list-item>
+          }
+          <span class="spirit-group-header">Wódki czyste</span>
+          @for ( item of vodkaClear; track item.title) {
+            <app-menu-list-item
+              [itemTitle]="item.title"
+              [itemDescription]="item.description"
+              [itemPrice]="item.price"
+            ></app-menu-list-item>
+          }
+          <span class="spirit-group-header">Wódki gatunkowe</span>
+          @for ( item of vodkaCraft; track item.title) {
+            <app-menu-list-item
+              [itemTitle]="item.title"
+              [itemDescription]="item.description"
+              [itemPrice]="item.price"
+            ></app-menu-list-item>
+          }
+          <span class="spirit-group-header">Wermut</span>
+          @for ( item of wermut; track item.title) {
+            <app-menu-list-item
+              [itemTitle]="item.title"
+              [itemDescription]="item.description"
+              [itemPrice]="item.price"
+            ></app-menu-list-item>
+          }
+          <span class="spirit-group-header">Tequila</span>
+          @for ( item of tequila; track item.title) {
+            <app-menu-list-item
+              [itemTitle]="item.title"
+              [itemDescription]="item.description"
+              [itemPrice]="item.price"
+            ></app-menu-list-item>
+          }
+          <span class="spirit-group-header">Likiery</span>
+          @for ( item of liquors; track item.title) {
+            <app-menu-list-item
+              [itemTitle]="item.title"
+              [itemDescription]="item.description"
+              [itemPrice]="item.price"
+            ></app-menu-list-item>
+          }
+          <span class="spirit-group-header">Gin</span>
+          @for ( item of gin; track item.title) {
+            <app-menu-list-item
+              [itemTitle]="item.title"
+              [itemDescription]="item.description"
+              [itemPrice]="item.price"
+            ></app-menu-list-item>
+          }
+          <span class="spirit-group-header">Bourbon</span>
+          @for ( item of bourbon; track item.title) {
+            <app-menu-list-item
+              [itemTitle]="item.title"
+              [itemDescription]="item.description"
+              [itemPrice]="item.price"
+            ></app-menu-list-item>
+          }
+          <span class="spirit-group-header">Whisky</span>
+          @for ( item of whisky; track item.title) {
+            <app-menu-list-item
+              [itemTitle]="item.title"
+              [itemDescription]="item.description"
+              [itemPrice]="item.price"
+            ></app-menu-list-item>
+          }
+          <span class="spirit-group-header">Koktajle</span>
+          @for ( item of cocktails; track item.title) {
+            <app-menu-list-item
+              [itemTitle]="item.title"
+              [itemDescription]="item.description"
+              [itemPrice]="item.price"
+            ></app-menu-list-item>
+          }
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>

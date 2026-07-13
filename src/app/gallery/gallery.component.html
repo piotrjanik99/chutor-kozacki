@@ -1,5 +1,5 @@
-<div class="divider-with-text" #galleryTop>
-  <span class="menu-header">Galeria</span>
+<div #galleryTop>
+  <app-section-header title="Galeria" level="h1"></app-section-header>
 </div>
 
 <div class="container mt-4">
@@ -29,12 +29,12 @@
       @defer (on viewport; when activeTab === 'dishes') {
         <div class="row">
           @for (image of dishImages; track image; let i = $index) {
-            <div class="col-md-3 col-sm-4 col-6 mb-4">
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
               <div class="card h-100">
                 <img
                   [src]="getPath(image)"
                   class="card-img-top img-fluid gallery-image"
-                  [alt]="'Danie ' + (i + 1)"
+                  [alt]="getImageAlt('dishes', i)"
                   (click)="openModal(i, 'dishes')"
                 >
               </div>
@@ -54,12 +54,12 @@
       @defer (on viewport; when activeTab === 'venue') {
         <div class="row">
           @for (image of venueImages; track image; let i = $index) {
-            <div class="col-md-3 col-sm-4 col-6 mb-4">
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
               <div class="card h-100">
                 <img
                   [src]="getPath(image)"
                   class="card-img-top img-fluid gallery-image"
-                  [alt]="'Obiekt ' + (i + 1)"
+                  [alt]="getImageAlt('venue', i)"
                   (click)="openModal(i, 'venue')"
                 >
               </div>
@@ -79,12 +79,12 @@
       @defer (on viewport; when activeTab === 'events') {
         <div class="row">
           @for (image of eventImages; track image; let i = $index) {
-            <div class="col-md-3 col-sm-4 col-6 mb-4">
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
               <div class="card h-100">
                 <img
                   [src]="getPath(image)"
                   class="card-img-top img-fluid gallery-image"
-                  [alt]="'Impreza ' + (i + 1)"
+                  [alt]="getImageAlt('events', i)"
                   (click)="openModal(i, 'events')"
                 >
               </div>
@@ -104,7 +104,7 @@
 
 <div class="row gx-0 footer mt-5">
   <app-footer></app-footer>
-  <span>Chutor Kozacki </span>
+  <span class="footer-copyright">Chutor Kozacki </span>
 </div>
 
 <ng-template #imageModal let-modal>
@@ -113,7 +113,7 @@
             class="btn-close position-absolute top-0 end-0 m-3 bg-white"
             (click)="modal.dismiss()">
     </button>
-    <img [src]="getPath(currentImage)" class="img-fluid modal-image">
+    <img [src]="getPath(currentImage)" class="img-fluid modal-image" [alt]="getCurrentImageAlt()">
   </div>
 </ng-template>
 

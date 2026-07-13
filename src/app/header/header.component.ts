@@ -15,15 +15,16 @@ import {NgClass} from "@angular/common";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
-  protected readonly window = window;
   private router = inject(Router)
   isPromoPage = signal(false);
+  isHomePage = signal(true);
 
   constructor() {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: any) => {
         this.isPromoPage.set(event.urlAfterRedirects === '/promo');
+        this.isHomePage.set(event.urlAfterRedirects === '/');
       });
   }
 }
