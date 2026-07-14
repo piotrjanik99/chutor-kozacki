@@ -12,9 +12,9 @@
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  background: #fff;
+  background: linear-gradient(90deg, #2B2017 0%, #473922 100%);
   border-radius: 20px;
-  border: 1px solid rgba(43, 32, 23, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 1.25rem;
   width: 100%;
 }
@@ -43,23 +43,10 @@
   position: relative;
 }
 
-// Fades the bottom edge of a clamped description so a scrollable slide
-// reads as "more below", not as text that got cut off.
-.slide-text.has-scroll::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 6px;
-  bottom: 0;
-  height: 28px;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff 80%);
-  pointer-events: none;
-}
-
 .slide-title {
   font-size: 20px;
   font-weight: 700;
-  color: #2B2017;
+  color: #fff;
 }
 
 .slide-divider {
@@ -72,7 +59,7 @@
 .slide-description {
   font-size: 15px;
   line-height: 1.6;
-  color: #55483c;
+  color: rgba(255, 255, 255, 0.85);
   white-space: pre-line;
 }
 
@@ -85,7 +72,12 @@
   overflow-y: auto;
   padding-right: 6px;
   scrollbar-width: thin;
-  scrollbar-color: rgba(204, 119, 0, 0.4) transparent;
+  scrollbar-color: rgba(255, 168, 69, 0.5) transparent;
+  // Fades the bottom edge so a scrollable slide reads as "more below",
+  // not as text that got cut off. A mask (rather than an overlay) keeps
+  // the fade correct over the card's gradient background.
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 28px), transparent);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 28px), transparent);
 }
 .slide-description.clamped::-webkit-scrollbar {
   width: 5px;
@@ -94,7 +86,7 @@
   background: transparent;
 }
 .slide-description.clamped::-webkit-scrollbar-thumb {
-  background: rgba(204, 119, 0, 0.35);
+  background: rgba(255, 168, 69, 0.45);
   border-radius: 3px;
 }
 

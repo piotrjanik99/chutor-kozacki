@@ -10,7 +10,7 @@
         <div class="slide-image-wrap">
           <img [ngSrc]="image" class="slide-image" [alt]="imageTitle()[i]" width="400" height="400" loading="lazy">
         </div>
-        <div class="slide-text" [class.has-scroll]="images().length > 1">
+        <div class="slide-text">
           <span class="slide-title">{{imageTitle()[i]}}</span>
           <span class="slide-divider"></span>
           <span class="slide-description" [class.clamped]="images().length > 1">{{imageDescription()[i]}}</span>

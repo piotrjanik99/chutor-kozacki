@@ -10,12 +10,12 @@ const t = (pl: string, en: string): BilingualText => ({ pl, en });
 
 export const appetizers: MenuItem[] = [
   {
-    title: t('Carpaccio z polędwicy daniela (180g)', 'Fallow deer tenderloin carpaccio (180g)'),
+    title: t('Sałatka myśliwego (180 g)', "Hunter's salad (180g)"),
     description: t(
-      'Karmelizowany burak, bryndza, cebulka marynowana, grzybki marynowane, oliwa z czosnkiem niedźwiedzim, kiełki',
-      'Caramelized beetroot, bryndza cheese, marinated onion, marinated mushrooms, wild garlic oil, sprouts'
+      'burak marynowany, bryndza, młode listki, pestki dyni, carpaccio z polędwicy daniela, dressing z syropem klonowym',
+      'marinated beetroot, bryndza cheese, young greens, pumpkin seeds, fallow deer tenderloin carpaccio, maple syrup dressing'
     ),
-    price: '75'
+    price: '48'
   },
   {
     title: t('Sałatka kozacka (200g)', 'Cossack Salad (200g)'),
@@ -28,12 +28,17 @@ export const appetizers: MenuItem[] = [
   {
     title: t('Deska serów karpackich (170g)', 'Carpathian cheese board (170g)'),
     description: t('z czarnuszką, kozieradką, czosnkiem niedźwiedzim', 'with black cumin, fenugreek, wild garlic'),
-    price: '38'
+    price: '48'
   },
   {
-    title: t('Deska myśliwego (200g)', "Hunter's board (200g)"),
-    description: t('mix wędlin z dziczyzny i marynaty', 'assortment of game meat cold cuts and pickles'),
-    price: '54'
+    title: t('Kolacja zimna (400 g)', 'Cold platter (400g)'),
+    description: t('', ''),
+    price: '48'
+  },
+  {
+    title: t('Śniadanie', 'Breakfast'),
+    description: t('bufet/serwowane', 'buffet/served'),
+    price: '48'
   }
 ];
 export const hotSnacks: MenuItem[] = [
@@ -47,13 +52,13 @@ export const hotSnacks: MenuItem[] = [
   },
   {
     title: t('Burger kresowy (300g)', 'Kresy-style Burger (300g)'),
-    description: t('Szarpana wieprzowina, kapusta zasmażana', 'Pulled pork, braised cabbage'),
+    description: t('Szarpana wołowina, kapusta zasmażana', 'Pulled beef, braised cabbage'),
     price: '38'
   },
   {
     title: t('Burger vege (300g)', 'Veggie Burger (300g)'),
     description: t(
-      'Burak karmelizowany, tofu wędzone , karmelizowana cebula, bundz, sałata, pesto czosnek niedźwiedzi',
+      'Burak karmelizowany, tofu wędzone, karmelizowana cebula, bundz, sałata, pesto czosnek niedźwiedzi',
       'Caramelized beetroot, smoked tofu, caramelized onion, bundz cheese, lettuce, wild garlic pesto'
     ),
     price: '42'
@@ -65,8 +70,23 @@ export const hotSnacks: MenuItem[] = [
   },
   {
     title: t('Knysze (450g)', 'Knysze dumplings (450g)'),
-    description: t('Smażone “pierogi” z bryndza, sos borowikowy , kiszonki', 'Fried "pierogi" filled with bryndza cheese, porcini mushroom sauce, pickles'),
+    description: t('Smażone “pierogi” z bryndza, sos borowikowy, kiszonki', 'Fried "pierogi" filled with bryndza cheese, porcini mushroom sauce, pickles'),
     price: '38'
+  },
+  {
+    title: t('Wątróbka po łemkowsku (300 g)', 'Lemko-style liver (300g)'),
+    description: t('wątróbka indycza, borowik, cebula, jabłko, majeranek podana na gorącym talerzu', 'turkey liver, porcini mushrooms, onion, apple, marjoram, served on a hot plate'),
+    price: '45'
+  },
+  {
+    title: t('Pierogi ukraińskie (400 g)', 'Ukrainian pierogi (400g)'),
+    description: t('ziemniaki, twaróg, cebula, śmietana', 'potatoes, curd cheese, onion, sour cream'),
+    price: '30'
+  },
+  {
+    title: t('Pierogi huculskie (400 g)', 'Hutsul pierogi (400g)'),
+    description: t('ziemniaki, twaróg, boczek, cebula, tymianek, kapusta czerwona, sos czosnkowy', 'potatoes, curd cheese, bacon, onion, thyme, red cabbage, garlic sauce'),
+    price: '35'
   }
 ];
 export const soups: MenuItem[] = [
@@ -110,7 +130,7 @@ export const mainCourses: MenuItem[] = [
   {
     title: t('Polędwiczka wieprzowa (350g)', 'Pork tenderloin (350g)'),
     description: t('gnocchi, sos z borowików, buraczki', 'gnocchi, porcini mushroom sauce, beetroot'),
-    price: '55'
+    price: '38'
   },
   {
     title: t('Filet z kurczaka (400 g)', 'Chicken fillet (400g)'),
@@ -121,9 +141,9 @@ export const mainCourses: MenuItem[] = [
     price: '54'
   },
   {
-    title: t('Udko z Gęsi confit (700g)', 'Goose leg confit (700g)'),
-    description: t('gołąbki z modrą kapustą, kluski śląskie, sos borówkowy ,rozmaryn', 'cabbage rolls with red cabbage, Silesian dumplings, blueberry sauce, rosemary'),
-    price: '108'
+    title: t('Żeberko (450 g)', 'Pork rib (450g)'),
+    description: t('żebro wieprzowe, ziemniaki pieczone, biała i czerwona kapusta, szczypiorek, sos BBQ', 'pork rib, roasted potatoes, white and red cabbage, chives, BBQ sauce'),
+    price: '55'
   },
   {
     title: t('CK schabowy po wiedeńsku (420g)', 'CK Viennese-style pork cutlet (420g)'),
@@ -141,22 +161,14 @@ export const mainCourses: MenuItem[] = [
     price: '98'
   },
   {
-    title: t('Ragout z Jelenia (350g)', 'Venison ragout (350g)'),
-    description: t(
-      'grubo krojone mięso i warzywa ( cukinia, bakłażan, marchew, cebula, śliwka ) w sosie na czerwonym winie z knedlem bułczanym i pomidorkami kiszonymi',
-      'Coarsely cut meat and vegetables (zucchini, eggplant, carrot, onion, plum) in a red wine sauce, served with a bread dumpling and pickled tomatoes'
-    ),
-    price: '75'
+    title: t('Zapiekanka Bojków (400 g)', 'Boyko casserole (400g)'),
+    description: t('jagnięcina, ziemniaki, brokuł, groszek, ser wędzony', 'lamb, potatoes, broccoli, green peas, smoked cheese'),
+    price: '65'
   },
   {
     title: t('Boczek z dzika (350g)', 'Wild boar belly (350g)'),
     description: t('parzybroda, sos musztardowy, jarmuż, cebulka marynowana', 'parzybroda (potato and cabbage mash), mustard sauce, kale, marinated onion'),
     price: '59'
-  },
-  {
-    title: t('Gołąbki z baraniną (350g)', 'Lamb cabbage rolls (350g)'),
-    description: t('zapiekane w sosie soubise , ziemniaki puree, sos miętowy', 'baked in soubise sauce, mashed potatoes, mint sauce'),
-    price: '65'
   },
   {
     title: t('Rumsztyk jagnięcy (450g)', 'Lamb rump steak (450g)'),
@@ -167,11 +179,6 @@ export const mainCourses: MenuItem[] = [
     title: t('Zestaw dnia (200 ml + 350g)', 'Daily set (200ml + 350g)'),
     description: t('Zupa, danie główne – informacja u obsługi', "Soup and main course – ask our staff for today's selection"),
     price: '55'
-  },
-  {
-    title: t('Kolacja zimna ( 400g )', 'Cold platter (400g)'),
-    description: t('', ''),
-    price: '48'
   }
 ];
 export const desserts: MenuItem[] = [
@@ -213,9 +220,9 @@ export const kidsMenu: MenuItem[] = [
     price: '18'
   },
   {
-    title: t('Medaliony ze schabu (350g)', 'Pork loin medallions (350g)'),
-    description: t('w delikatnym sosie pieczeniowym z ziemniakami puree i mizerią', 'in a light roasting sauce with mashed potatoes and cucumber salad'),
-    price: '34'
+    title: t('Pulpeciki w sosie śmietanowym (300 g)', 'Meatballs in cream sauce (300g)'),
+    description: t('puree ziemniaczane, mizeria', 'mashed potatoes, cucumber salad'),
+    price: '30'
   },
   {
     title: t('Fileciki z kurczaka (300g)', 'Chicken fillet strips (300g)'),
@@ -228,9 +235,14 @@ export const kidsMenu: MenuItem[] = [
     price: '34'
   },
   {
+    title: t('Pierogi ukraińskie (200 g)', 'Ukrainian pierogi (200g)'),
+    description: t('ziemniaki, twaróg, cebula, śmietana', 'potatoes, curd cheese, onion, sour cream'),
+    price: '18'
+  },
+  {
     title: t('Frytki z ketchupem (150g)', 'Fries with ketchup (150g)'),
     description: t('', ''),
-    price: '12'
+    price: '15'
   }
 ];
 export const sides: MenuItem[] = [
@@ -250,7 +262,7 @@ export const sides: MenuItem[] = [
     price: '5'
   },
   {
-    title: t('Sosy: ketchup, musztarda, sos czosnkowy (50g)', 'Sauces: ketchup, mustard, garlic sauce (50g)'),
+    title: t('Sosy: czosnkowy, burgerowy, ketchup, musztarda (50g)', 'Sauces: garlic, burger, ketchup, mustard (50g)'),
     description: t('', ''),
     price: '5'
   }
@@ -282,7 +294,7 @@ export const hotDrinks: MenuItem[] = [
     price: '15'
   },
   {
-    title: t('Kawa latte', 'Latte'),
+    title: t('Kawa latte/mrożona', 'Latte/iced coffee'),
     description: t('', ''),
     price: '18'
   },
@@ -342,6 +354,11 @@ export const coldDrinks: MenuItem[] = [
     title: t('Podpiwek (300ml/1 litr)', 'Podpiwek, malt soft drink (300ml/1 liter)'),
     description: t('', ''),
     price: '7/16'
+  },
+  {
+    title: t('Napój energetyzujący', 'Energy drink'),
+    description: t('', ''),
+    price: '9'
   }
 ];
 export const beer: MenuItem[] = [
@@ -364,6 +381,11 @@ export const beer: MenuItem[] = [
     title: t('Piwo BiesCzadowe Zawijka (500ml)', 'BiesCzadowe Zawijka beer (500ml)'),
     description: t('', ''),
     price: '20'
+  },
+  {
+    title: t('Piwo BiesCzadowe bezalkoholowe (500ml)', 'BiesCzadowe non-alcoholic beer (500ml)'),
+    description: t('', ''),
+    price: '15'
   },
   {
     title: t('Grzaniec bieszczadzki (200ml)', 'Bieszczady-style mulled beer (200ml)'),
@@ -508,4 +530,9 @@ export const cocktails: MenuItem[] = [
     description: t('malibu, żubrówka z trawą, sok jabłkowy', 'Malibu, Żubrówka with bison grass, apple juice'),
     price: '25'
   },
+  {
+    title: t('Aperol', 'Aperol'),
+    description: t('prosecco, aperol, woda gazowana', 'prosecco, Aperol, soda water'),
+    price: '28'
+  }
 ];

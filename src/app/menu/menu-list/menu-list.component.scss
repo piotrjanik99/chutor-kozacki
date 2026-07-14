@@ -1,23 +1,31 @@
 @use 'breakpoints' as bp;
 
+// 4px matches .carousel-item's horizontal padding so the accordion
+// lines up flush with the carousel cards above it.
 .menu-wrap {
-  padding-inline: clamp(0.5rem, 3vw, 2rem);
+  padding-inline: 4px;
 }
 
 .accordion {
-  --bs-accordion-border-color: rgba(43, 32, 23, 0.08);
+  --bs-accordion-border-color: rgba(255, 255, 255, 0.12);
   --bs-accordion-border-width: 1px;
   --bs-accordion-border-radius: 16px;
   --bs-accordion-inner-border-radius: 15px;
-  --bs-accordion-bg: #fff;
-  --bs-accordion-btn-bg: #fff;
-  --bs-accordion-btn-color: #2B2017;
-  --bs-accordion-active-bg: #fff;
-  --bs-accordion-active-color: #2B2017;
+  --bs-accordion-bg: transparent;
+  --bs-accordion-btn-bg: transparent;
+  --bs-accordion-btn-color: #fff;
+  --bs-accordion-active-bg: transparent;
+  --bs-accordion-active-color: #fff;
   --bs-accordion-btn-focus-border-color: transparent;
   --bs-accordion-btn-focus-box-shadow: none;
-  --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23cc7700' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
-  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23cc7700' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23ffa845' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23ffa845' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+}
+
+// The panel background lives on the item (not the Bootstrap bg variables)
+// so it can carry the same brown gradient as the contact info pane.
+.accordion-item {
+  background: linear-gradient(90deg, #2B2017 0%, #473922 100%);
 }
 
 .accordion-button {
@@ -35,7 +43,7 @@
   margin: 1.25rem 0 0.5rem;
   font-size: clamp(16px, 3vw, 20px);
   font-weight: 700;
-  color: #cc7700;
+  color: #ffa845;
 }
 .spirit-group-header:first-child {
   margin-top: 0.25rem;

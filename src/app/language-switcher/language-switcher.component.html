@@ -1,0 +1,24 @@
+<div class="lang-switcher-wrap">
+  <div class="lang-switcher" [class.pulse]="showHint()" role="group" aria-label="Language / Język">
+    <button type="button"
+            class="lang-option"
+            [class.active]="languageService.lang() === 'pl'"
+            [attr.aria-pressed]="languageService.lang() === 'pl'"
+            (click)="selectLang('pl')">
+      PL
+    </button>
+    <button type="button"
+            class="lang-option"
+            [class.active]="languageService.lang() === 'en'"
+            [attr.aria-pressed]="languageService.lang() === 'en'"
+            (click)="selectLang('en')">
+      EN
+    </button>
+  </div>
+  @if (showHint()) {
+    <div class="lang-hint" [class.hiding]="hidingHint()" role="status">
+      <span class="lang-hint-line">Tutaj zmienisz język!</span>
+      <span class="lang-hint-line">You can switch the language here!</span>
+    </div>
+  }
+</div>

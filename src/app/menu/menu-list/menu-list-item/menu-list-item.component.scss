@@ -4,11 +4,11 @@
 
 .item-title {
   font-size: clamp(1.1em, 4vw, 1.4em);
-  color: #2B2017;
+  color: #fff;
 }
 
 .item-description {
-  color: #555;
+  color: rgba(255, 255, 255, 0.75);
   font-size: 1em;
   margin-bottom: clamp(14px, 4vw, 26px);
 }

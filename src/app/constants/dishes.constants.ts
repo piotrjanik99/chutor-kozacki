@@ -9,10 +9,6 @@ export const DISH_DESCRIPTIONS: Record<string, BilingualText> = {
     pl: 'Tradycyjna pieczeń z daniela własnej hodowli z dodatkiem boczku i aromatycznych przypraw podawana z szaszłykiem warzywny, frytkami z batatów \n czosnek pieczony, sos myśliwski',
     en: "Traditional roast fallow deer from our own farm with bacon and aromatic spices, served with a vegetable skewer and sweet potato fries \n roasted garlic, hunter's sauce"
   },
-  GOLABKI: {
-    pl: 'Zapiekane w sosie soubise, ziemniaki puree, sos miętowy',
-    en: 'Baked in soubise sauce, mashed potatoes, mint sauce'
-  },
   BORSZCZ: {
     pl: 'Na wywarze z wędzonych żeberek, i grzybów z kapustą, ziemniakami, marchewką, fasolą. Tradycyjna receptura z regionu Huculszczyzny w Polsce podobny spotykany pod nazwą barszcz ukraiński podawany z dodatkami : sało, cebula, chleb razowy, kwaśna śmietana',
     en: 'Made from a broth of smoked ribs and mushrooms with cabbage, potatoes, carrot, and beans. A traditional recipe from the Hutsul region of Poland, similar to what is known as Ukrainian borscht, served with cured pork fat, onion, rye bread, and sour cream'

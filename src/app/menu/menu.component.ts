@@ -11,7 +11,6 @@ const DISH_TITLES: { image: string; title: BilingualText; description: Bilingual
   { image: 'dish3.png', title: { pl: 'Borszcz', en: 'Borscht' }, description: DISH_DESCRIPTIONS['BORSZCZ'] },
   { image: 'dish2.png', title: { pl: 'Kozak Burger', en: 'Kozak Burger' }, description: DISH_DESCRIPTIONS['BURGER'] },
   { image: 'dish1.png', title: { pl: 'Pieczeń z daniela', en: 'Roast Fallow Deer' }, description: DISH_DESCRIPTIONS['DANIEL'] },
-  { image: 'dish4.png', title: { pl: 'Gołąbki z baraniną', en: 'Lamb Cabbage Rolls' }, description: DISH_DESCRIPTIONS['GOLABKI'] },
 ];
 
 @Component({

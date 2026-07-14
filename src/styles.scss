@@ -5,7 +5,10 @@ body {
     margin: 0 auto;
     font-family: "Poppins", sans-serif;
     overflow-x: hidden;
-    background-color: #F4F2EF;
+    // Warm linen in the same hue family as the brand brown (#2B2017) and
+    // orange (#cc7700) — light enough to stay quiet, deep enough that the
+    // white cards visibly lift off it.
+    background-color: #EEE5D6;
 }
 html {
   scroll-padding-top: 60px;
