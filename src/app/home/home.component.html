@@ -1,7 +1,7 @@
 <div class="row gx-0 team" id="team">
-  @defer (on viewport) {
+  @defer (on viewport; when scrollService.sectionsForced()) {
     <div class="fade-in">
-      <app-carousel purpose="Załoga" [images]="staffImage" [imageTitle]="staffTitle" [imageDescription]="staffImageDescription"></app-carousel>
+      <app-carousel purpose="Załoga" [images]="staffImage()" [imageTitle]="staffTitle()" [imageDescription]="staffImageDescription()"></app-carousel>
     </div>
   } @placeholder {
     <div class="placeholder">Loading team section...</div>
@@ -9,7 +9,7 @@
 </div>
 
 <div class="row gx-0 menu">
-  @defer (on viewport) {
+  @defer (on viewport; when scrollService.sectionsForced()) {
     <div class="fade-in">
       <app-menu class="mt-5"></app-menu>
     </div>
@@ -19,10 +19,10 @@
 </div>
 
 <div class="row gx-0 events" id="events">
-  <app-section-header title="Wydarzenia"></app-section-header>
-  @defer (on viewport) {
+  <app-section-header [title]="'section.events' | translate:languageService.lang()"></app-section-header>
+  @defer (on viewport; when scrollService.sectionsForced()) {
     <div class="fade-in">
-      <app-carousel purpose="Wydarzenia" [images]="eventImage" [imageTitle]="eventTitle" [imageDescription]="eventImageDescription" [descriptionHeight]="{ base: 330, md: 275, lg: 220 }"></app-carousel>
+      <app-carousel purpose="Wydarzenia" [images]="eventImage()" [imageTitle]="eventTitle()" [imageDescription]="eventImageDescription()" [descriptionHeight]="{ base: 330, md: 275, lg: 220 }"></app-carousel>
     </div>
   } @placeholder {
     <div class="placeholder">Loading events...</div>
@@ -30,8 +30,8 @@
 </div>
 
 <div class="row gx-0 contact" id="contact">
-  <app-section-header title="Kontakt"></app-section-header>
-  @defer (on viewport) {
+  <app-section-header [title]="'section.contact' | translate:languageService.lang()"></app-section-header>
+  @defer (on viewport; when scrollService.sectionsForced()) {
     <div class="fade-in">
       <app-contact></app-contact>
     </div>
@@ -41,7 +41,7 @@
 </div>
 
 <div class="row gx-0 footer mt-5">
-  @defer (on viewport) {
+  @defer (on viewport; when scrollService.sectionsForced()) {
     <div class="fade-in">
       <app-footer></app-footer>
     </div>
@@ -58,6 +58,6 @@
             class="btn-close position-absolute top-0 end-0 m-3 bg-white z-3"
             (click)="modal.dismiss()">
     </button>
-    <img src="/plakat-luty.jpg" class="modal-image z-2" alt="Aktualna promocja restauracji Chutor Kozacki">
+    <img src="/plakat-luty.jpg" class="modal-image z-2" [attr.alt]="'home.welcomePromoAlt' | translate:languageService.lang()">
   </div>
 </ng-template>

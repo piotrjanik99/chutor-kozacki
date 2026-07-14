@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {MenuListItemComponent} from "./menu-list-item/menu-list-item.component";
+import {TranslatePipe} from "../../pipes/translate.pipe";
+import {LanguageService} from "../../services/language.service";
 import {
   appetizers, beer, bourbon, cocktails, coldDrinks,
   desserts, gin,
@@ -15,12 +17,14 @@ import {
   selector: 'app-menu-list',
   standalone: true,
   imports: [
-    MenuListItemComponent
+    MenuListItemComponent,
+    TranslatePipe,
   ],
   templateUrl: './menu-list.component.html',
   styleUrl: './menu-list.component.scss'
 })
 export class MenuListComponent {
+  protected languageService = inject(LanguageService);
   protected readonly appetizers = appetizers;
   protected readonly hotSnacks = hotSnacks;
   protected readonly soups = soups;

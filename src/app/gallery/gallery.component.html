@@ -1,25 +1,25 @@
 <div #galleryTop>
-  <app-section-header title="Galeria" level="h1"></app-section-header>
+  <app-section-header [title]="'section.gallery' | translate:languageService.lang()" level="h1"></app-section-header>
 </div>
 
 <div class="container mt-4">
-  <ul class="nav nav-tabs border-0" id="galleryTabs" role="tablist">
+  <ul class="nav gallery-tabs justify-content-center" id="galleryTabs" role="tablist">
     <li class="nav-item" role="presentation">
       <button class="nav-link active" id="dishes-tab" data-bs-toggle="tab" data-bs-target="#dishes"
               type="button" role="tab" (click)="activeTab = 'dishes'">
-        <h3 class="text-black">Dania</h3>
+        <h3>{{ 'gallery.tabDishes' | translate:languageService.lang() }}</h3>
       </button>
     </li>
     <li class="nav-item" role="presentation">
       <button class="nav-link" id="venue-tab" data-bs-toggle="tab" data-bs-target="#venue"
               type="button" role="tab" (click)="activeTab = 'venue'">
-        <h3 class="text-black">Obiekt</h3>
+        <h3>{{ 'gallery.tabVenue' | translate:languageService.lang() }}</h3>
       </button>
     </li>
     <li class="nav-item" role="presentation">
       <button class="nav-link" id="events-tab" data-bs-toggle="tab" data-bs-target="#events"
               type="button" role="tab" (click)="activeTab = 'events'">
-        <h3 class="text-black">Imprezy okolicznościowe</h3>
+        <h3>{{ 'gallery.tabEvents' | translate:languageService.lang() }}</h3>
       </button>
     </li>
   </ul>

@@ -2,12 +2,16 @@ import {ChangeDetectionStrategy, Component, inject, TemplateRef, ViewChild} from
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {FormBuilder, ReactiveFormsModule, Validators} from "@angular/forms";
 import {init, send} from "@emailjs/browser";
+import {TranslatePipe} from "../pipes/translate.pipe";
+import {LanguageService} from "../services/language.service";
+import {UI_TRANSLATIONS} from "../i18n/ui-translations";
 
 @Component({
   selector: 'app-contact',
   standalone: true,
   imports: [
     ReactiveFormsModule,
+    TranslatePipe,
   ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
@@ -17,6 +21,7 @@ export class ContactComponent {
   mail: string = 'kontakt@chutor-kozacki-restauracja.pl'
   modalService = inject(NgbModal);
   fb = inject(FormBuilder);
+  protected languageService = inject(LanguageService);
   @ViewChild('contactModal') contactModal!: TemplateRef<any>;
 
   contactForm = this.fb.group({
@@ -54,7 +59,7 @@ export class ContactComponent {
       this.subject?.reset()
       this.message?.reset()
       this.modalService.dismissAll()
-      alert("Dziękujemy za wiadomość")
+      alert(UI_TRANSLATIONS['contact.thankYou'][this.languageService.lang()])
     })
   }
 

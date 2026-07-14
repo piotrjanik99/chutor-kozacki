@@ -1,58 +1,59 @@
 <div class="header">
   @if (!isPromoPage()) {
     <div class="logo-container">
-      <img src="/LOGO_BAZA.png" class="logo" width="400" height="400" routerLink="/" alt="Chutor Kozacki - restauracja" style="cursor:pointer;">
+      <img src="/LOGO_BAZA.png" class="logo" width="400" height="400" routerLink="/" [attr.alt]="'header.logoAlt' | translate:languageService.lang()" style="cursor:pointer;">
       @if (isHomePage()) {
-        <h1 class="slogan">Wymarzone przyjęcia w sercu Bieszczad!</h1>
+        <h1 class="slogan">{{ 'header.slogan' | translate:languageService.lang() }}</h1>
       } @else {
-        <p class="slogan">Wymarzone przyjęcia w sercu Bieszczad!</p>
+        <p class="slogan">{{ 'header.slogan' | translate:languageService.lang() }}</p>
       }
     </div>
   } @else {
     <div class="promo-container">
-      <p class="promo-text">Otrzymujesz kod rabatowy 5% na wszystkie usługi oferowane przez Restaurację Chutor Kozacki (z wyłaczeniem organizacji
-        wesel).<br>
-        W celu realizacji, przy zamówieniu powiadom
-        obsługę o swoim kodzie:<br> <span class="promo-code">PROMOCHUTOR2026</span>
+      <p class="promo-text">{{ 'promo.text1' | translate:languageService.lang() }}<br>
+        {{ 'promo.text2' | translate:languageService.lang() }}<br> <span class="promo-code">PROMOCHUTOR2026</span>
       </p>
-      <button class="btn btn-dark rounded-pill py-2 text-uppercase fs-6 letter-spacing-1" routerLink="/">Strona główna</button>
+      <button class="btn btn-dark rounded-pill py-2 text-uppercase fs-6 letter-spacing-1" routerLink="/">{{ 'promo.backHome' | translate:languageService.lang() }}</button>
     </div>
   }
-  <img src="/bg2.jpg" class="header-bg" alt="Danie serwowane w restauracji Chutor Kozacki" [ngClass]="{'promo-bg': isPromoPage()}">
+  <img src="/bg2.jpg" class="header-bg" [attr.alt]="'header.bgAlt' | translate:languageService.lang()" [ngClass]="{'promo-bg': isPromoPage()}">
 </div>
 @if (!isPromoPage()) {
 <nav class="navbar navbar-expand-lg mt-3 text-center" data-bs-theme="dark">
   <div class="container">
     <ul class="navbar-nav gap-4">
       <li class="nav-item">
-        <a class="nav-link" href="https://www.chutor-kozacki.pl" target="_blank">Hotel</a>
+        <a class="nav-link" href="https://www.chutor-kozacki.pl" target="_blank">{{ 'nav.hotel' | translate:languageService.lang() }}</a>
       </li>
     </ul>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class="d-flex d-lg-none align-items-center gap-3 ms-auto">
+      <app-language-switcher></app-language-switcher>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto gap-4">
+      <ul class="navbar-nav ms-auto gap-4 gap-lg-1 gap-xl-2" (click)="onNavListClick($event)">
         <li class="nav-item">
-          <a class="nav-link" href="#team">Załoga</a>
+          <a class="nav-link" href="#team" (click)="scrollService.onAnchorClick($event, 'team')">{{ 'nav.team' | translate:languageService.lang() }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#specialDishes">Nasze specjały</a>
+          <a class="nav-link" href="#specialDishes" (click)="scrollService.onAnchorClick($event, 'specialDishes')">{{ 'nav.specialties' | translate:languageService.lang() }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#events">Wydarzenia</a>
+          <a class="nav-link" href="#events" (click)="scrollService.onAnchorClick($event, 'events')">{{ 'nav.events' | translate:languageService.lang() }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/gallery">Galeria</a>
+          <a class="nav-link" routerLink="/gallery">{{ 'nav.gallery' | translate:languageService.lang() }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/order">Zorganizuj</a>
+          <a class="nav-link" routerLink="/order">{{ 'nav.order' | translate:languageService.lang() }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#contact">Kontakt</a>
+          <a class="nav-link" href="#contact" (click)="scrollService.onAnchorClick($event, 'contact')">{{ 'nav.contact' | translate:languageService.lang() }}</a>
         </li>
-        <div class="d-flex justify-content-center gap-3">
+        <div class="d-flex justify-content-center align-items-center gap-3 gap-lg-1">
           <li class="nav-item">
             <a class="nav-link" href="https://www.facebook.com/profile.php?id=61559120176701" target="_blank">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor"
@@ -71,15 +72,9 @@
               </svg>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.tiktok.com" target="_blank">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-tiktok"
-                   viewBox="0 0 16 16">
-                <path
-                  d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
-              </svg>
-            </a>
-          </li>
+        </div>
+        <div class="d-none d-lg-flex align-items-center ms-2">
+          <app-language-switcher></app-language-switcher>
         </div>
       </ul>
     </div>

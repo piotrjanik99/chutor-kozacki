@@ -1,10 +1,10 @@
 <div class="contact-card">
-    <a class="map-pane" href="https://www.google.com/maps/search/?api=1&query=Chutor+Kozacki,Lukowe" target="_blank" rel="noopener" aria-label="Otwórz lokalizację w Mapach Google">
+    <a class="map-pane" href="https://www.google.com/maps/search/?api=1&query=Chutor+Kozacki,Lukowe" target="_blank" rel="noopener" [attr.aria-label]="'contact.mapAriaLabel' | translate:languageService.lang()">
         <img class="map-image"
              src="https://maps.googleapis.com/maps/api/staticmap?center=Chutor+Kozacki,Lukowe&zoom=16&size=800x600&scale=2&maptype=satellite&markers=color:0xcc7700%7CChutor+Kozacki,Lukowe&key=AIzaSyBl7NA_Mk-gwzwOkqvKJpcBopyIbZOqL-M"
-             alt="Mapa lokalizacji Chutor Kozacki, Łukowe" loading="lazy">
+             [attr.alt]="'contact.mapAlt' | translate:languageService.lang()" loading="lazy">
         <span class="map-badge">
-          Otwórz w Mapach
+          {{ 'contact.openInMaps' | translate:languageService.lang() }}
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
             <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
@@ -13,7 +13,7 @@
     </a>
   <div class="info-pane">
       <div class="d-flex contact-row">
-        <h3>Zapraszamy do kontaktu!</h3>
+        <h3>{{ 'contact.heading' | translate:languageService.lang() }}</h3>
       </div>
       <div class="d-flex contact-row">
         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-envelope-at" viewBox="0 0 16 16">
@@ -44,7 +44,7 @@
       </div>
       <div class="d-flex contact-row">
         <button type="button" class="btn btn-outline-light btn-rounded" data-mdb-ripple-init  data-mdb-ripple-color="dark" (click)="openContact()">
-          Wyślij nam wiadomość</button>
+          {{ 'contact.sendMessage' | translate:languageService.lang() }}</button>
       </div>
     </div>
 </div>
@@ -52,34 +52,37 @@
 <ng-template #contactModal let-modal>
   <div class="modal-content minimalist-style">
     <div class="modal-header border-0 pb-0">
-      <h4 class="modal-title fs-5 fw-light text-uppercase letter-spacing-1">Skontaktuj się z nami</h4>
+      <div class="modal-heading">
+        <h4 class="modal-title">{{ 'contact.modalTitle' | translate:languageService.lang() }}</h4>
+        <span class="modal-accent"></span>
+      </div>
       <button type="button" class="btn-close position-absolute top-0 end-0 m-3" (click)="modal.dismiss()">
       </button>
     </div>
     <div class="modal-body pt-0">
       <form [formGroup]="contactForm" (ngSubmit)="sendMail()" novalidate>
         <div class="mb-3">
-          <label for="name" class="form-label small text-muted">Twoje Imie</label>
+          <label for="name" class="form-label small text-muted">{{ 'contact.formName' | translate:languageService.lang() }}</label>
           <input type="text" id="name" formControlName="name" class="form-control border-0 border-bottom rounded-0 px-0">
         </div>
 
         <div class="mb-3">
-          <label for="email" class="form-label small text-muted">Twój e-mail</label>
+          <label for="email" class="form-label small text-muted">{{ 'contact.formEmail' | translate:languageService.lang() }}</label>
           <input type="text" id="email" formControlName="email" class="form-control border-0 border-bottom rounded-0 px-0">
         </div>
 
         <div class="mb-3">
-          <label for="subject" class="form-label small text-muted">Temat</label>
+          <label for="subject" class="form-label small text-muted">{{ 'contact.formSubject' | translate:languageService.lang() }}</label>
           <input type="text" id="subject" formControlName="subject" class="form-control border-0 border-bottom rounded-0 px-0">
         </div>
 
         <div class="mb-4">
-          <label for="message" class="form-label small text-muted">Wiadomość</label>
+          <label for="message" class="form-label small text-muted">{{ 'contact.formMessage' | translate:languageService.lang() }}</label>
           <textarea id="message" formControlName="message" rows="3" class="form-control border-0 border-bottom rounded-0 px-0"></textarea>
         </div>
 
         <div class="d-grid gap-2">
-          <button type="submit" class="btn btn-dark rounded-pill py-2 text-uppercase fs-6 letter-spacing-1" [disabled]="contactForm.invalid">Wyślij</button>
+          <button type="submit" class="btn btn-dark rounded-pill py-2 text-uppercase fs-6 letter-spacing-1" [disabled]="contactForm.invalid">{{ 'contact.submit' | translate:languageService.lang() }}</button>
         </div>
       </form>
     </div>

@@ -4,17 +4,13 @@
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#appetizers" aria-expanded="false" aria-controls="appetizers">
-          Przekąski zimne
+          {{ 'menu.appetizers' | translate:languageService.lang() }}
         </button>
       </h2>
       <div id="appetizers" class="accordion-collapse collapse" data-bs-parent="#menu">
         <div class="accordion-body">
-          @for ( item of appetizers; track item.title) {
-            <app-menu-list-item
-              [itemTitle]="item.title"
-              [itemDescription]="item.description"
-              [itemPrice]="item.price"
-            ></app-menu-list-item>
+          @for ( item of appetizers; track item) {
+            <app-menu-list-item [item]="item" [lang]="languageService.lang()"></app-menu-list-item>
           }
         </div>
       </div>
@@ -23,17 +19,13 @@
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hotSnacks" aria-expanded="false" aria-controls="hotSnacks">
-          Przekąski gorące
+          {{ 'menu.hotSnacks' | translate:languageService.lang() }}
         </button>
       </h2>
       <div id="hotSnacks" class="accordion-collapse collapse" data-bs-parent="#menu">
         <div class="accordion-body">
-          @for ( item of hotSnacks; track item.title) {
-            <app-menu-list-item
-              [itemTitle]="item.title"
-              [itemDescription]="item.description"
-              [itemPrice]="item.price"
-            ></app-menu-list-item>
+          @for ( item of hotSnacks; track item) {
+            <app-menu-list-item [item]="item" [lang]="languageService.lang()"></app-menu-list-item>
           }
         </div>
       </div>
@@ -42,17 +34,13 @@
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#soups" aria-expanded="false" aria-controls="soups">
-          Zupy
+          {{ 'menu.soups' | translate:languageService.lang() }}
         </button>
       </h2>
       <div id="soups" class="accordion-collapse collapse" data-bs-parent="#menu">
         <div class="accordion-body">
-          @for ( item of soups; track item.title) {
-            <app-menu-list-item
-              [itemTitle]="item.title"
-              [itemDescription]="item.description"
-              [itemPrice]="item.price"
-            ></app-menu-list-item>
+          @for ( item of soups; track item) {
+            <app-menu-list-item [item]="item" [lang]="languageService.lang()"></app-menu-list-item>
           }
         </div>
       </div>
@@ -61,17 +49,13 @@
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mainCourses" aria-expanded="false" aria-controls="mainCourses">
-          Dania główne
+          {{ 'menu.mainCourses' | translate:languageService.lang() }}
         </button>
       </h2>
       <div id="mainCourses" class="accordion-collapse collapse" data-bs-parent="#menu">
         <div class="accordion-body">
-          @for ( item of mainCourses; track item.title) {
-            <app-menu-list-item
-              [itemTitle]="item.title"
-              [itemDescription]="item.description"
-              [itemPrice]="item.price"
-            ></app-menu-list-item>
+          @for ( item of mainCourses; track item) {
+            <app-menu-list-item [item]="item" [lang]="languageService.lang()"></app-menu-list-item>
           }
         </div>
       </div>
@@ -80,17 +64,13 @@
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#desserts" aria-expanded="false" aria-controls="desserts">
-          Desery
+          {{ 'menu.desserts' | translate:languageService.lang() }}
         </button>
       </h2>
       <div id="desserts" class="accordion-collapse collapse" data-bs-parent="#menu">
         <div class="accordion-body">
-          @for ( item of desserts; track item.title) {
-            <app-menu-list-item
-              [itemTitle]="item.title"
-              [itemDescription]="item.description"
-              [itemPrice]="item.price"
-            ></app-menu-list-item>
+          @for ( item of desserts; track item) {
+            <app-menu-list-item [item]="item" [lang]="languageService.lang()"></app-menu-list-item>
           }
         </div>
       </div>
@@ -99,17 +79,13 @@
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#kidsMenu" aria-expanded="false" aria-controls="kidsMenu">
-          Dla dzieci
+          {{ 'menu.kidsMenu' | translate:languageService.lang() }}
         </button>
       </h2>
       <div id="kidsMenu" class="accordion-collapse collapse" data-bs-parent="#menu">
         <div class="accordion-body">
-          @for ( item of kidsMenu; track item.title) {
-            <app-menu-list-item
-              [itemTitle]="item.title"
-              [itemDescription]="item.description"
-              [itemPrice]="item.price"
-            ></app-menu-list-item>
+          @for ( item of kidsMenu; track item) {
+            <app-menu-list-item [item]="item" [lang]="languageService.lang()"></app-menu-list-item>
           }
         </div>
       </div>
@@ -118,17 +94,13 @@
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sides" aria-expanded="false" aria-controls="sides">
-          Dodatki
+          {{ 'menu.sides' | translate:languageService.lang() }}
         </button>
       </h2>
       <div id="sides" class="accordion-collapse collapse" data-bs-parent="#menu">
         <div class="accordion-body">
-          @for ( item of sides; track item.title) {
-            <app-menu-list-item
-              [itemTitle]="item.title"
-              [itemDescription]="item.description"
-              [itemPrice]="item.price"
-            ></app-menu-list-item>
+          @for ( item of sides; track item) {
+            <app-menu-list-item [item]="item" [lang]="languageService.lang()"></app-menu-list-item>
           }
         </div>
       </div>
@@ -137,17 +109,13 @@
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hotDrinks" aria-expanded="false" aria-controls="hotDrinks">
-          Napoje ciepłe
+          {{ 'menu.hotDrinks' | translate:languageService.lang() }}
         </button>
       </h2>
       <div id="hotDrinks" class="accordion-collapse collapse" data-bs-parent="#menu">
         <div class="accordion-body">
-          @for ( item of hotDrinks; track item.title) {
-            <app-menu-list-item
-              [itemTitle]="item.title"
-              [itemDescription]="item.description"
-              [itemPrice]="item.price"
-            ></app-menu-list-item>
+          @for ( item of hotDrinks; track item) {
+            <app-menu-list-item [item]="item" [lang]="languageService.lang()"></app-menu-list-item>
           }
         </div>
       </div>
@@ -156,17 +124,13 @@
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#coldDrinks" aria-expanded="false" aria-controls="coldDrinks">
-          Napoje zimne
+          {{ 'menu.coldDrinks' | translate:languageService.lang() }}
         </button>
       </h2>
       <div id="coldDrinks" class="accordion-collapse collapse" data-bs-parent="#menu">
         <div class="accordion-body">
-          @for ( item of coldDrinks; track item.title) {
-            <app-menu-list-item
-              [itemTitle]="item.title"
-              [itemDescription]="item.description"
-              [itemPrice]="item.price"
-            ></app-menu-list-item>
+          @for ( item of coldDrinks; track item) {
+            <app-menu-list-item [item]="item" [lang]="languageService.lang()"></app-menu-list-item>
           }
         </div>
       </div>
@@ -175,90 +139,50 @@
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#alcohol" aria-expanded="false" aria-controls="alcohol">
-          Alkohole
+          {{ 'menu.alcohol' | translate:languageService.lang() }}
         </button>
       </h2>
       <div id="alcohol" class="accordion-collapse collapse" data-bs-parent="#menu">
         <div class="accordion-body">
-          <span class="spirit-group-header">Piwo</span>
-          @for ( item of beer; track item.title) {
-            <app-menu-list-item
-              [itemTitle]="item.title"
-              [itemDescription]="item.description"
-              [itemPrice]="item.price"
-            ></app-menu-list-item>
+          <span class="spirit-group-header">{{ 'menu.beer' | translate:languageService.lang() }}</span>
+          @for ( item of beer; track item) {
+            <app-menu-list-item [item]="item" [lang]="languageService.lang()"></app-menu-list-item>
           }
-          <span class="spirit-group-header">Wódki czyste</span>
-          @for ( item of vodkaClear; track item.title) {
-            <app-menu-list-item
-              [itemTitle]="item.title"
-              [itemDescription]="item.description"
-              [itemPrice]="item.price"
-            ></app-menu-list-item>
+          <span class="spirit-group-header">{{ 'menu.vodkaClear' | translate:languageService.lang() }}</span>
+          @for ( item of vodkaClear; track item) {
+            <app-menu-list-item [item]="item" [lang]="languageService.lang()"></app-menu-list-item>
           }
-          <span class="spirit-group-header">Wódki gatunkowe</span>
-          @for ( item of vodkaCraft; track item.title) {
-            <app-menu-list-item
-              [itemTitle]="item.title"
-              [itemDescription]="item.description"
-              [itemPrice]="item.price"
-            ></app-menu-list-item>
+          <span class="spirit-group-header">{{ 'menu.vodkaCraft' | translate:languageService.lang() }}</span>
+          @for ( item of vodkaCraft; track item) {
+            <app-menu-list-item [item]="item" [lang]="languageService.lang()"></app-menu-list-item>
           }
-          <span class="spirit-group-header">Wermut</span>
-          @for ( item of wermut; track item.title) {
-            <app-menu-list-item
-              [itemTitle]="item.title"
-              [itemDescription]="item.description"
-              [itemPrice]="item.price"
-            ></app-menu-list-item>
+          <span class="spirit-group-header">{{ 'menu.wermut' | translate:languageService.lang() }}</span>
+          @for ( item of wermut; track item) {
+            <app-menu-list-item [item]="item" [lang]="languageService.lang()"></app-menu-list-item>
           }
-          <span class="spirit-group-header">Tequila</span>
-          @for ( item of tequila; track item.title) {
-            <app-menu-list-item
-              [itemTitle]="item.title"
-              [itemDescription]="item.description"
-              [itemPrice]="item.price"
-            ></app-menu-list-item>
+          <span class="spirit-group-header">{{ 'menu.tequila' | translate:languageService.lang() }}</span>
+          @for ( item of tequila; track item) {
+            <app-menu-list-item [item]="item" [lang]="languageService.lang()"></app-menu-list-item>
           }
-          <span class="spirit-group-header">Likiery</span>
-          @for ( item of liquors; track item.title) {
-            <app-menu-list-item
-              [itemTitle]="item.title"
-              [itemDescription]="item.description"
-              [itemPrice]="item.price"
-            ></app-menu-list-item>
+          <span class="spirit-group-header">{{ 'menu.liquors' | translate:languageService.lang() }}</span>
+          @for ( item of liquors; track item) {
+            <app-menu-list-item [item]="item" [lang]="languageService.lang()"></app-menu-list-item>
           }
-          <span class="spirit-group-header">Gin</span>
-          @for ( item of gin; track item.title) {
-            <app-menu-list-item
-              [itemTitle]="item.title"
-              [itemDescription]="item.description"
-              [itemPrice]="item.price"
-            ></app-menu-list-item>
+          <span class="spirit-group-header">{{ 'menu.gin' | translate:languageService.lang() }}</span>
+          @for ( item of gin; track item) {
+            <app-menu-list-item [item]="item" [lang]="languageService.lang()"></app-menu-list-item>
           }
-          <span class="spirit-group-header">Bourbon</span>
-          @for ( item of bourbon; track item.title) {
-            <app-menu-list-item
-              [itemTitle]="item.title"
-              [itemDescription]="item.description"
-              [itemPrice]="item.price"
-            ></app-menu-list-item>
+          <span class="spirit-group-header">{{ 'menu.bourbon' | translate:languageService.lang() }}</span>
+          @for ( item of bourbon; track item) {
+            <app-menu-list-item [item]="item" [lang]="languageService.lang()"></app-menu-list-item>
           }
-          <span class="spirit-group-header">Whisky</span>
-          @for ( item of whisky; track item.title) {
-            <app-menu-list-item
-              [itemTitle]="item.title"
-              [itemDescription]="item.description"
-              [itemPrice]="item.price"
-            ></app-menu-list-item>
+          <span class="spirit-group-header">{{ 'menu.whisky' | translate:languageService.lang() }}</span>
+          @for ( item of whisky; track item) {
+            <app-menu-list-item [item]="item" [lang]="languageService.lang()"></app-menu-list-item>
           }
-          <span class="spirit-group-header">Koktajle</span>
-          @for ( item of cocktails; track item.title) {
-            <app-menu-list-item
-              [itemTitle]="item.title"
-              [itemDescription]="item.description"
-              [itemPrice]="item.price"
-            ></app-menu-list-item>
+          <span class="spirit-group-header">{{ 'menu.cocktails' | translate:languageService.lang() }}</span>
+          @for ( item of cocktails; track item) {
+            <app-menu-list-item [item]="item" [lang]="languageService.lang()"></app-menu-list-item>
           }
         </div>
       </div>

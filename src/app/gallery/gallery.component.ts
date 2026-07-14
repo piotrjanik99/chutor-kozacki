@@ -1,10 +1,13 @@
-import { AfterViewInit, Component, ElementRef, inject, PLATFORM_ID, TemplateRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, PLATFORM_ID, TemplateRef, ViewChild, effect } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from "@angular/router";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import {FooterComponent} from "../footer/footer.component";
 import {SectionHeaderComponent} from "../section-header/section-header.component";
 import {SeoService} from "../services/seo.service";
+import {TranslatePipe} from "../pipes/translate.pipe";
+import {LanguageService} from "../services/language.service";
+import {UI_TRANSLATIONS} from "../i18n/ui-translations";
 
 @Component({
   selector: 'app-gallery',
@@ -13,6 +16,7 @@ import {SeoService} from "../services/seo.service";
         RouterOutlet,
         FooterComponent,
         SectionHeaderComponent,
+        TranslatePipe,
     ],
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.scss'
@@ -23,6 +27,7 @@ export class GalleryComponent implements AfterViewInit {
   modalService = inject(NgbModal);
   private seo = inject(SeoService);
   private platformId = inject(PLATFORM_ID);
+  protected languageService = inject(LanguageService);
 
   dishImages = [
     'dish1.png',
@@ -109,10 +114,17 @@ export class GalleryComponent implements AfterViewInit {
   activeTab: string = 'dishes';
 
   constructor() {
-    this.seo.setPageSeo({
-      path: '/gallery',
-      title: 'Galeria - Chutor Kozacki Restauracja Bieszczady',
-      description: 'Zobacz galerię zdjęć restauracji Chutor Kozacki: nasze dania, wnętrza oraz zorganizowane przez nas wesela i imprezy okolicznościowe w Bieszczadach.'
+    effect(() => {
+      const lang = this.languageService.lang();
+      this.seo.setPageSeo({
+        path: '/gallery',
+        title: lang === 'pl'
+          ? 'Galeria - Chutor Kozacki Restauracja Bieszczady'
+          : 'Gallery - Chutor Kozacki Restaurant Bieszczady',
+        description: lang === 'pl'
+          ? 'Zobacz galerię zdjęć restauracji Chutor Kozacki: nasze dania, wnętrza oraz zorganizowane przez nas wesela i imprezy okolicznościowe w Bieszczadach.'
+          : 'See the photo gallery of Chutor Kozacki restaurant: our dishes, interiors, and weddings and special events we have organized in the Bieszczady Mountains.'
+      });
     });
   }
 
@@ -126,10 +138,10 @@ export class GalleryComponent implements AfterViewInit {
     }, 100);
   }
 
-  private readonly categoryLabels: Record<'dishes' | 'venue' | 'events', string> = {
-    dishes: 'Danie serwowane w restauracji Chutor Kozacki',
-    venue: 'Wnętrze restauracji Chutor Kozacki',
-    events: 'Impreza okolicznościowa zorganizowana w Chutor Kozacki'
+  private readonly categoryLabelKeys: Record<'dishes' | 'venue' | 'events', string> = {
+    dishes: 'gallery.altDishes',
+    venue: 'gallery.altVenue',
+    events: 'gallery.altEvents'
   };
 
   getPath(image: string): string {
@@ -137,12 +149,17 @@ export class GalleryComponent implements AfterViewInit {
   }
 
   getImageAlt(category: 'dishes' | 'venue' | 'events', index: number): string {
-    return `${this.categoryLabels[category]} - zdjęcie ${index + 1}`;
+    const lang = this.languageService.lang();
+    const label = UI_TRANSLATIONS[this.categoryLabelKeys[category]][lang];
+    const photoWord = UI_TRANSLATIONS['gallery.photoWord'][lang];
+    return `${label} - ${photoWord} ${index + 1}`;
   }
 
   getCurrentImageAlt(): string {
+    const lang = this.languageService.lang();
     const category = this.currentCategory as 'dishes' | 'venue' | 'events';
-    return this.categoryLabels[category] ?? 'Zdjęcie z galerii Chutor Kozacki';
+    const key = this.categoryLabelKeys[category];
+    return key ? UI_TRANSLATIONS[key][lang] : UI_TRANSLATIONS['gallery.altFallback'][lang];
   }
 
   openModal(index: number, category: 'dishes' | 'venue' | 'events') {

@@ -25,7 +25,7 @@
         <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M10.5 13 6 8l4.5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <span class="visually-hidden">Poprzedni</span>
+        <span class="visually-hidden">{{ 'carousel.prev' | translate:languageService.lang() }}</span>
       </button>
 
       <div class="carousel-dots">
@@ -36,7 +36,7 @@
                   [attr.data-bs-target]="'#' + carouselId"
                   [attr.data-bs-slide-to]="i"
                   [attr.aria-current]="i === activeIndex()"
-                  [attr.aria-label]="'Przejdź do slajdu ' + (i + 1)">
+                  [attr.aria-label]="('carousel.goToSlide' | translate:languageService.lang()) + ' ' + (i + 1)">
           </button>
         }
       </div>
@@ -45,7 +45,7 @@
         <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M5.5 3 10 8l-4.5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <span class="visually-hidden">Następny</span>
+        <span class="visually-hidden">{{ 'carousel.next' | translate:languageService.lang() }}</span>
       </button>
     </div>
   }
