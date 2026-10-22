@@ -2,7 +2,7 @@ import { BilingualText } from '../models/bilingual.model';
 
 export const UI_TRANSLATIONS: Record<string, BilingualText> = {
   // Navigation (shared across header desktop nav, header mobile nav, footer)
-  'nav.hotel': { pl: 'Hotel', en: 'Hotel' },
+  'nav.hotel': { pl: '< Chutor Kozacki', en: '< Chutor Kozacki' },
   'nav.team': { pl: 'Załoga', en: 'Team' },
   'nav.specialties': { pl: 'Nasze specjały', en: 'Specialties' },
   'nav.events': { pl: 'Wydarzenia', en: 'Events' },

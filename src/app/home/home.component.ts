@@ -39,10 +39,10 @@ export class HomeComponent implements OnInit {
       description: {
         pl: 'Szef kuchni Jacek Śliwiński posiada ponad 25 letnie doświadczenie kulinarne. W swojej kuchni inspiruje się smakami kresów wschodnich, oraz smakami swojego dzieciństwa w Bieszczadach, przez co dania przez niego przygotowane są unikalne i nietuzinkowe. \n' +
           'Zaczynał swoją przygodę jako kucharz w Grand Hotel Lublinianka, gdzie przez blisko 10 lat przygotowywał potrawy dla gości. Prowadził szereg różnych kuchni jako szef, w różnych lokalizacjach organizując przy tym zarówno małe jak i duże imprezy kulinarne, liczące nawet do 800 osób. \n' +
-          'Obecnie zajmuje się prowadzeniem swojej restauracji w hotelu Chutor Kozacki.',
+          'Obecnie zajmuje się prowadzeniem swojej restauracji w Chutorze Kozackim.',
         en: 'Head Chef Jacek Śliwiński has more than 25 years of culinary experience. His cooking draws on the flavors of the Eastern Borderlands (Kresy) as well as the tastes of his childhood in the Bieszczady Mountains, resulting in dishes that are unique and out of the ordinary. \n' +
           'He began his career as a cook at the Grand Hotel Lublinianka, where he prepared meals for guests for nearly 10 years. He has led a number of different kitchens as head chef, in various locations, organizing both small and large culinary events for up to 800 people. \n' +
-          'Today he runs his own restaurant at the Chutor Kozacki hotel.'
+          'Today he runs his own restaurant at Chutor Kozacki.'
       }
     }
   ];
