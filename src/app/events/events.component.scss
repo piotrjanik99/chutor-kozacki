@@ -1,0 +1,262 @@
+@use 'breakpoints' as bp;
+@use 'footer-panel' as fp;
+
+.upcoming-tiles,
+.celebration-tiles,
+.why-tiles {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  margin: 2rem 0;
+}
+
+.upcoming-tile,
+.celebration-tile,
+.corporate-card,
+.why-tile {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(43, 32, 23, 0.08);
+  box-shadow: 0 8px 24px rgba(28, 19, 9, 0.12);
+}
+
+.upcoming-tile,
+.celebration-tile,
+.why-tile {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.corporate-card {
+  margin: 2rem 0;
+}
+
+.upcoming-tile:hover,
+.celebration-tile:hover,
+.why-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(28, 19, 9, 0.18);
+}
+
+.upcoming-tile-image,
+.celebration-tile-image,
+.corporate-card-image,
+.why-tile-image {
+  width: 100%;
+  overflow: hidden;
+}
+
+.upcoming-tile-image {
+  aspect-ratio: 16 / 9;
+}
+
+.celebration-tile-image,
+.corporate-card-image,
+.why-tile-image {
+  aspect-ratio: 4 / 3;
+}
+
+.upcoming-tile-image img,
+.celebration-tile-image img,
+.corporate-card-image img,
+.why-tile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.upcoming-tile-image img,
+.celebration-tile-image img,
+.why-tile-image img {
+  transition: transform 0.35s ease;
+}
+
+.upcoming-tile:hover .upcoming-tile-image img,
+.celebration-tile:hover .celebration-tile-image img,
+.why-tile:hover .why-tile-image img {
+  transform: scale(1.05);
+}
+
+.upcoming-tile-body,
+.celebration-tile-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  padding: 1.5rem 1.5rem 1.75rem;
+}
+
+.celebration-tile-body {
+  gap: 0.6rem;
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+
+.upcoming-tile-title,
+.celebration-tile-title,
+.corporate-card-title {
+  margin: 0;
+  font-weight: 700;
+  color: #2B2017;
+}
+
+.upcoming-tile-title {
+  font-size: clamp(20px, 3vw, 24px);
+}
+
+.celebration-tile-title {
+  font-size: clamp(19px, 3vw, 22px);
+}
+
+.upcoming-tile-meta {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #cc7700;
+}
+
+.upcoming-tile-description,
+.celebration-tile-description {
+  margin: 0;
+  flex: 1;
+  color: #6b5c4d;
+  font-size: 15px;
+}
+
+.upcoming-tile-button,
+.corporate-card-button,
+.why-cta-button {
+  position: relative;
+  z-index: 0;
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #fff;
+  background-color: #cc7700;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.upcoming-tile-button {
+  margin-top: 0.5rem;
+  padding: 0.6rem 1.75rem;
+}
+
+// Layered the gradient as a fading overlay rather than transitioning the
+// `background` shorthand directly — a solid color can't interpolate with a
+// gradient, which otherwise causes a white flash mid-transition.
+.upcoming-tile-button::before,
+.corporate-card-button::before,
+.why-cta-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, #cc7700 0%, #ffa845 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.upcoming-tile-button:hover,
+.corporate-card-button:hover,
+.why-cta-button:hover {
+  transform: translateY(-1px);
+}
+
+.upcoming-tile-button:hover::before,
+.corporate-card-button:hover::before,
+.why-cta-button:hover::before {
+  opacity: 1;
+}
+
+.corporate-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 1.75rem 1.5rem;
+}
+
+.corporate-card-title {
+  font-size: clamp(22px, 3.5vw, 28px);
+}
+
+.corporate-card-description {
+  margin: 0;
+  color: #6b5c4d;
+  font-size: 16px;
+}
+
+.corporate-card-button {
+  align-self: flex-start;
+  margin-top: 0.25rem;
+  padding: 0.6rem 1.75rem;
+}
+
+.why-tile-description {
+  margin: 0;
+  text-align: center;
+  color: #6b5c4d;
+  font-size: 15px;
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+
+.why-cta-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.why-cta-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.8rem 1.75rem;
+  font-size: 16px;
+}
+
+.footer {
+  @include fp.footer-panel;
+}
+
+.footer-copyright {
+  @include fp.footer-copyright;
+}
+
+@include bp.md {
+  .upcoming-tiles {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .celebration-tiles,
+  .why-tiles,
+  .why-cta-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .corporate-card {
+    flex-direction: row;
+    height: 380px;
+  }
+  .corporate-card-image {
+    width: 50%;
+    height: 100%;
+    aspect-ratio: auto;
+  }
+  .corporate-card-body {
+    width: 50%;
+    padding: 2rem 2.5rem;
+  }
+  .why-cta-button {
+    grid-column: 2;
+  }
+}

@@ -11,6 +11,16 @@ export class ScrollService {
   // mid-scroll and push it away.
   readonly sectionsForced = signal(false);
 
+  // Used after routing to a new page: the browser keeps the old scroll offset,
+  // which can land past the new (shorter) page's height. A single scrollIntoView
+  // right after navigation can still get overridden by images loading in below
+  // the fold and shifting layout, so we re-assert it once more shortly after.
+  scrollToTop(el: HTMLElement): void {
+    const scroll = () => el.scrollIntoView({behavior: 'smooth', block: 'start'});
+    requestAnimationFrame(() => requestAnimationFrame(scroll));
+    setTimeout(scroll, 400);
+  }
+
   onAnchorClick(event: Event, sectionId: string): void {
     event.preventDefault();
     this.scrollToSection(sectionId);

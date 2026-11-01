@@ -29,6 +29,7 @@ export class HeaderComponent {
   protected scrollService = inject(ScrollService);
   isPromoPage = signal(false);
   isHomePage = signal(true);
+  isEventsPage = signal(false);
 
   constructor() {
     this.router.events
@@ -36,6 +37,8 @@ export class HeaderComponent {
       .subscribe((event: any) => {
         this.isPromoPage.set(event.urlAfterRedirects === '/promo');
         this.isHomePage.set(event.urlAfterRedirects === '/');
+        const path = event.urlAfterRedirects.split(/[?#]/)[0];
+        this.isEventsPage.set(path === '/events' || path.startsWith('/events/'));
       });
   }
 

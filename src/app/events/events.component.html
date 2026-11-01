@@ -1,0 +1,83 @@
+<div #eventsTop>
+  <app-section-header [title]="'section.upcomingEvents' | translate:languageService.lang()" [subtitle]="'section.upcomingEventsSubtitle' | translate:languageService.lang()" level="h1"></app-section-header>
+</div>
+
+<div class="container">
+  <div class="upcoming-tiles">
+    @for (event of events(); track event.title) {
+      <div class="upcoming-tile">
+        <div class="upcoming-tile-image">
+          <img [src]="event.image" [alt]="event.title" loading="lazy">
+        </div>
+        <div class="upcoming-tile-body">
+          <h3 class="upcoming-tile-title">{{ event.title }}</h3>
+          <span class="upcoming-tile-meta">{{ event.meta }}</span>
+          <p class="upcoming-tile-description">{{ event.description }}</p>
+          <button type="button" class="upcoming-tile-button" [routerLink]="event.link">{{ 'events.offerButton' | translate:languageService.lang() }}</button>
+        </div>
+      </div>
+    }
+  </div>
+</div>
+
+<div class="mt-5">
+  <app-section-header [title]="'section.celebrations' | translate:languageService.lang()" [subtitle]="'section.celebrationsSubtitle' | translate:languageService.lang()"></app-section-header>
+</div>
+
+<div class="container">
+  <div class="celebration-tiles">
+    @for (celebration of celebrations(); track celebration.title) {
+      <div class="celebration-tile">
+        <div class="celebration-tile-image">
+          <img [src]="celebration.image" [alt]="celebration.title" loading="lazy">
+        </div>
+        <div class="celebration-tile-body">
+          <h3 class="celebration-tile-title">{{ celebration.title }}</h3>
+          <p class="celebration-tile-description">{{ celebration.description }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</div>
+
+<div class="mt-5">
+  <app-section-header [title]="'section.corporateEvents' | translate:languageService.lang()" [subtitle]="'section.corporateEventsSubtitle' | translate:languageService.lang()"></app-section-header>
+</div>
+
+<div class="container">
+  <div class="corporate-card">
+    <div class="corporate-card-image">
+      <img src="/events/wigilia_firmowa.jpg" [alt]="'events.corporateChristmasTitle' | translate:languageService.lang()" loading="lazy">
+    </div>
+    <div class="corporate-card-body">
+      <h3 class="corporate-card-title">{{ 'events.corporateChristmasTitle' | translate:languageService.lang() }}</h3>
+      <p class="corporate-card-description">{{ 'events.corporateChristmasDescription' | translate:languageService.lang() }}</p>
+      <button type="button" class="corporate-card-button" routerLink="/events/wigilia">{{ 'events.offerButton' | translate:languageService.lang() }}</button>
+    </div>
+  </div>
+</div>
+
+<div class="mt-5">
+  <app-section-header [title]="'section.whyChutor' | translate:languageService.lang()" [subtitle]="'section.whyChutorSubtitle' | translate:languageService.lang()"></app-section-header>
+</div>
+
+<div class="container">
+  <div class="why-tiles">
+    @for (reason of whyReasons(); track reason.description) {
+      <div class="why-tile">
+        <div class="why-tile-image">
+          <img [src]="reason.image" [alt]="reason.description" loading="lazy">
+        </div>
+        <p class="why-tile-description">{{ reason.description }}</p>
+      </div>
+    }
+  </div>
+  <div class="why-cta-row">
+    <button type="button" class="why-cta-button" routerLink="/order">{{ 'events.planWithUs' | translate:languageService.lang() }}</button>
+  </div>
+</div>
+
+<div class="row gx-0 footer mt-5">
+  <app-footer></app-footer>
+  <span class="footer-copyright">Chutor Kozacki </span>
+</div>

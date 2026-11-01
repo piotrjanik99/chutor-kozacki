@@ -49,42 +49,4 @@
     </div>
 </div>
 
-<ng-template #contactModal let-modal>
-  <div class="modal-content minimalist-style">
-    <div class="modal-header border-0 pb-0">
-      <div class="modal-heading">
-        <h4 class="modal-title">{{ 'contact.modalTitle' | translate:languageService.lang() }}</h4>
-        <span class="modal-accent"></span>
-      </div>
-      <button type="button" class="btn-close position-absolute top-0 end-0 m-3" (click)="modal.dismiss()">
-      </button>
-    </div>
-    <div class="modal-body pt-0">
-      <form [formGroup]="contactForm" (ngSubmit)="sendMail()" novalidate>
-        <div class="mb-3">
-          <label for="name" class="form-label small text-muted">{{ 'contact.formName' | translate:languageService.lang() }}</label>
-          <input type="text" id="name" formControlName="name" class="form-control border-0 border-bottom rounded-0 px-0">
-        </div>
-
-        <div class="mb-3">
-          <label for="email" class="form-label small text-muted">{{ 'contact.formEmail' | translate:languageService.lang() }}</label>
-          <input type="text" id="email" formControlName="email" class="form-control border-0 border-bottom rounded-0 px-0">
-        </div>
-
-        <div class="mb-3">
-          <label for="subject" class="form-label small text-muted">{{ 'contact.formSubject' | translate:languageService.lang() }}</label>
-          <input type="text" id="subject" formControlName="subject" class="form-control border-0 border-bottom rounded-0 px-0">
-        </div>
-
-        <div class="mb-4">
-          <label for="message" class="form-label small text-muted">{{ 'contact.formMessage' | translate:languageService.lang() }}</label>
-          <textarea id="message" formControlName="message" rows="3" class="form-control border-0 border-bottom rounded-0 px-0"></textarea>
-        </div>
-
-        <div class="d-grid gap-2">
-          <button type="submit" class="btn btn-dark rounded-pill py-2 text-uppercase fs-6 letter-spacing-1" [disabled]="contactForm.invalid">{{ 'contact.submit' | translate:languageService.lang() }}</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</ng-template>
+<app-contact-modal #contactModal></app-contact-modal>

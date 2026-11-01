@@ -1,4 +1,5 @@
 import {Component, OnInit, TemplateRef, ViewChild, computed, effect, inject} from '@angular/core';
+import {RouterLink} from '@angular/router';
 import {CarouselComponent} from "../carousel/carousel.component";
 import {ContactComponent} from "../contact/contact.component";
 import {MenuComponent} from "../menu/menu.component";
@@ -14,6 +15,7 @@ import {TranslatePipe} from "../pipes/translate.pipe";
   selector: 'app-home',
   standalone: true,
   imports: [
+    RouterLink,
     CarouselComponent,
     ContactComponent,
     MenuComponent,
@@ -47,36 +49,27 @@ export class HomeComponent implements OnInit {
     }
   ];
 
-  private eventData = [
+  private upcomingEventsData = [
     {
-      image: 'gallery/event28main.jpg',
-      title: { pl: 'Wesela', en: 'Weddings' },
-      description: {
-        pl: 'W Restauracji Chutor Kozacki możecie spełnić swoje marzenie o bajkowym i wyjątkowym weselu, które będziecie wspominać przez długie lata. Do organizacji każdego przyjęcia weselnego podchodzimy w indywidualny sposób, tak aby marzenia klientów o idealnym weselu stały się rzeczywistością.' +
-          'Kompleksowo zorganizujecie u nas przyjęcie weselne do 250 osób w sali z klimatyzacją, w wiejskim zaciszu',
-        en: "At Chutor Kozacki Restaurant you can make your dream of a fairy-tale, one-of-a-kind wedding come true — a day you'll remember for years to come. We approach every wedding individually, so that our clients' vision of the perfect wedding becomes reality. " +
-          "We can fully organize a wedding reception for up to 250 guests in our air-conditioned hall, tucked away in a quiet countryside setting."
-      }
+      image: '/Wigilie firmowe.jpg',
+      link: '/events/wigilia',
+      badge: { pl: 'Dla firm', en: 'For Businesses' },
+      title: { pl: 'Wigilia firmowa', en: 'Corporate Christmas Eve' },
+      description: { pl: 'Świąteczne spotkanie zespołu', en: "A festive team Christmas Eve gathering" }
     },
     {
-      image: 'gallery/event1main.jpeg',
-      title: { pl: 'Komunie', en: 'Communions' },
-      description: {
-        pl: 'Chutor Kozacki oferuje wyjątkową przestrzeń do organizacji tej uroczystości w eleganckiej, ale i ciepłej atmosferze. Stylowe wnętrza nawiązujące do kresowego dziedzictwa, klimatyzowana sala oraz piękne, zielone otoczenie sprawiają, że każda komunia staje się niezapomnianym przeżyciem.\n' +
-          'Z nami pierwsza wielka uroczystość Waszego dziecka stanie się prawdziwą przygodą – pełną radości, smaków i niezapomnianych wrażeń!',
-        en: 'Chutor Kozacki offers a unique space to celebrate this occasion in an elegant yet warm atmosphere. Stylish interiors inspired by Kresy heritage, an air-conditioned hall, and beautiful green surroundings make every communion an unforgettable experience. \n' +
-          "With us, your child's first big celebration will become a true adventure — full of joy, flavor, and lasting memories!"
-      }
+      image: '/Andrzejki.jpg',
+      link: '/events/andrzejki',
+      badge: { pl: 'Najbliższe', en: 'Upcoming' },
+      title: { pl: 'Andrzejki w Chutorze', en: "St. Andrew's Night at Chutor" },
+      description: { pl: 'Co ta noc wywróży?', en: 'What will this night foretell?' }
     },
     {
-      image: 'gallery/event33main.jpg',
-      title: { pl: 'Imprezy okolicznościowe', en: 'Special Events' },
-      description: {
-        pl: 'Restauracja Chutor Kozacki zajmuje się organizacją wszelakich imprez okolicznościowych takich jak przyjęcia urodzinowe, imprezy firmowe czy chrzciny. \n' +
-          'Po imprezie można zrelaksować się w otoczeniu przyrody lub przenieść się do naszej przytulnej wiaty grillowej na mniej formalną część spotkania. Chutor Kozacki to idealne miejsce na świętowanie w gronie najbliższych – z klasą, sercem i dbałością o każdy szczegół.',
-        en: 'Chutor Kozacki Restaurant organizes all kinds of special events, such as birthday parties, corporate events, or christenings. \n' +
-          'After the event, you can relax surrounded by nature or move to our cozy grill shelter for a more informal part of the gathering. Chutor Kozacki is the perfect place to celebrate with your loved ones — with style, heart, and attention to every detail.'
-      }
+      image: '/Sylwester.jpg',
+      link: '/events/sylwester',
+      badge: { pl: 'Oferta specjalna', en: 'Special Offer' },
+      title: { pl: 'Sylwester 2026/2027', en: 'New Year\'s Eve 2026/2027' },
+      description: { pl: 'Wyjątkowy bal sylwestrowy!', en: 'An extraordinary New Year\'s Eve ball!' }
     }
   ];
 
@@ -84,9 +77,13 @@ export class HomeComponent implements OnInit {
   staffTitle = computed(() => this.staffData.map(d => d.title[this.languageService.lang()]));
   staffImageDescription = computed(() => this.staffData.map(d => d.description[this.languageService.lang()]));
 
-  eventImage = computed(() => this.eventData.map(d => d.image));
-  eventTitle = computed(() => this.eventData.map(d => d.title[this.languageService.lang()]));
-  eventImageDescription = computed(() => this.eventData.map(d => d.description[this.languageService.lang()]));
+  upcomingEvents = computed(() => this.upcomingEventsData.map(d => ({
+    image: d.image,
+    link: d.link,
+    badge: d.badge[this.languageService.lang()],
+    title: d.title[this.languageService.lang()],
+    description: d.description[this.languageService.lang()]
+  })));
 
   constructor() {
     effect(() => {

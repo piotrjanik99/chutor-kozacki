@@ -1,5 +1,12 @@
 <div class="header">
-  @if (!isPromoPage()) {
+  @if (isPromoPage()) {
+    <div class="promo-container">
+      <p class="promo-text">{{ 'promo.text1' | translate:languageService.lang() }}<br>
+        {{ 'promo.text2' | translate:languageService.lang() }}<br> <span class="promo-code">PROMOCHUTOR2026</span>
+      </p>
+      <button class="btn btn-dark rounded-pill py-2 text-uppercase fs-6 letter-spacing-1" routerLink="/">{{ 'promo.backHome' | translate:languageService.lang() }}</button>
+    </div>
+  } @else if (!isEventsPage()) {
     <div class="logo-container">
       <img src="/LOGO_BAZA.png" class="logo" width="400" height="400" routerLink="/" [attr.alt]="'header.logoAlt' | translate:languageService.lang()" style="cursor:pointer;">
       @if (isHomePage()) {
@@ -8,15 +15,8 @@
         <p class="slogan">{{ 'header.slogan' | translate:languageService.lang() }}</p>
       }
     </div>
-  } @else {
-    <div class="promo-container">
-      <p class="promo-text">{{ 'promo.text1' | translate:languageService.lang() }}<br>
-        {{ 'promo.text2' | translate:languageService.lang() }}<br> <span class="promo-code">PROMOCHUTOR2026</span>
-      </p>
-      <button class="btn btn-dark rounded-pill py-2 text-uppercase fs-6 letter-spacing-1" routerLink="/">{{ 'promo.backHome' | translate:languageService.lang() }}</button>
-    </div>
   }
-  <img src="/bg2.jpg" class="header-bg" [attr.alt]="'header.bgAlt' | translate:languageService.lang()" [ngClass]="{'promo-bg': isPromoPage()}">
+  <img [src]="isEventsPage() ? '/events/Banner.jpg' : '/bg2.jpg'" class="header-bg" [attr.alt]="isEventsPage() ? ('header.eventsBannerAlt' | translate:languageService.lang()) : ('header.bgAlt' | translate:languageService.lang())" [ngClass]="{'promo-bg': isPromoPage()}">
 </div>
 @if (!isPromoPage()) {
 <nav class="navbar navbar-expand-lg mt-3 text-center" data-bs-theme="dark">
@@ -36,13 +36,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto gap-4 gap-lg-1 gap-xl-2" (click)="onNavListClick($event)">
         <li class="nav-item">
-          <a class="nav-link" href="#team" (click)="scrollService.onAnchorClick($event, 'team')">{{ 'nav.team' | translate:languageService.lang() }}</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="#specialDishes" (click)="scrollService.onAnchorClick($event, 'specialDishes')">{{ 'nav.specialties' | translate:languageService.lang() }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#events" (click)="scrollService.onAnchorClick($event, 'events')">{{ 'nav.events' | translate:languageService.lang() }}</a>
+          <a class="nav-link" routerLink="/events">{{ 'nav.events' | translate:languageService.lang() }}</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/gallery">{{ 'nav.gallery' | translate:languageService.lang() }}</a>

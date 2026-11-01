@@ -1,0 +1,9 @@
+@use 'footer-panel' as fp;
+
+.footer {
+  @include fp.footer-panel;
+}
+
+.footer-copyright {
+  @include fp.footer-copyright;
+}
